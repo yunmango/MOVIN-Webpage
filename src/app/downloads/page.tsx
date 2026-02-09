@@ -1,9 +1,14 @@
-"use client";
-
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { IMAGES, DOWNLOAD_LINKS, SHOP_URL } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  title: "Downloads - MOVIN Studio & Plugins",
+  description:
+    "Download MOVIN Studio and plugins for Unity, Unreal Engine, Blender, and TouchDesigner. Sample motion data included.",
+};
 
 /* ─── Hero Section ─── */
 function HeroSection() {

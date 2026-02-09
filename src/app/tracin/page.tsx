@@ -1,9 +1,14 @@
-"use client";
-
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { IMAGES, VIDEOS } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  title: "MOVIN TRACIN - Real-time Markerless Motion Capture",
+  description:
+    "MOVIN TRACIN delivers real-time, free-body motion capture in a single compact device. AI-powered processing, setup in under 3 minutes.",
+};
 
 /* ─── Hero ─── */
 function HeroSection() {
@@ -18,7 +23,7 @@ function HeroSection() {
           height={1600}
           priority
           className="h-full w-auto max-w-none object-cover"
-          unoptimized
+          sizes="(max-width: 768px) 100vw, 1080px"
         />
       </div>
 
@@ -156,7 +161,7 @@ function FreeYourBodySection() {
               width={1440}
               height={2025}
               className="rounded-[30px]"
-              unoptimized
+              sizes="(max-width: 768px) 100vw, 1080px"
             />
           </div>
           <div className="col-start-5 col-end-9 hidden md:block">
@@ -166,7 +171,7 @@ function FreeYourBodySection() {
               width={1440}
               height={2025}
               className="rounded-[30px]"
-              unoptimized
+              sizes="(max-width: 768px) 100vw, 1080px"
             />
           </div>
           <div className="col-start-9 col-end-13 hidden md:block">
@@ -176,7 +181,7 @@ function FreeYourBodySection() {
               width={1440}
               height={2025}
               className="rounded-[30px]"
-              unoptimized
+              sizes="(max-width: 768px) 100vw, 1080px"
             />
           </div>
         </div>
@@ -343,7 +348,7 @@ function CleanUpSection() {
                 width={3840}
                 height={2160}
                 className="rounded-[30px]"
-                unoptimized
+                sizes="(max-width: 768px) 100vw, 1080px"
               />
             </ScrollReveal>
           </div>
@@ -639,7 +644,7 @@ function SpecTableSection() {
                   width={2560}
                   height={1440}
                   className="w-full"
-                  unoptimized
+                  sizes="(max-width: 768px) 100vw, 1080px"
                 />
               </div>
 

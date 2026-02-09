@@ -1,5 +1,3 @@
-"use client";
-
 import { VideoBackground } from "@/components/shared/video-background";
 import { VIDEOS } from "@/lib/constants";
 
@@ -10,6 +8,7 @@ export function HeroSection() {
         mp4Src={VIDEOS.hero}
         webmSrc={VIDEOS.heroWebm}
         overlayClassName="bg-black/30"
+        preload="auto"
       />
       <div className="relative z-10 text-center">
         <h1 className="font-ui text-[32px] leading-[38px] tracking-[-0.8px] font-normal text-white md:text-[64px] md:leading-[76.8px] md:tracking-[-1.6px]">

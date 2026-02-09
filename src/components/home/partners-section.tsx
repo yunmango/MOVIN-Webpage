@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
@@ -41,7 +39,6 @@ export function PartnersSection() {
             width={148}
             height={38}
             className="h-[38px] w-auto object-contain"
-            unoptimized
           />
         </ScrollReveal>
         <ScrollReveal delay={0.25}>
@@ -54,7 +51,6 @@ export function PartnersSection() {
             width={200}
             height={34}
             className="h-[34px] w-auto object-contain"
-            unoptimized
           />
         </ScrollReveal>
       </div>

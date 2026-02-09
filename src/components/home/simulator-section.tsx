@@ -1,5 +1,3 @@
-"use client";
-
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 

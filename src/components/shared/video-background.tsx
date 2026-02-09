@@ -1,5 +1,3 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 
 interface VideoBackgroundProps {
@@ -7,6 +5,7 @@ interface VideoBackgroundProps {
   webmSrc?: string;
   className?: string;
   overlayClassName?: string;
+  preload?: "auto" | "metadata" | "none";
 }
 
 export function VideoBackground({
@@ -14,6 +13,7 @@ export function VideoBackground({
   webmSrc,
   className,
   overlayClassName,
+  preload = "metadata",
 }: VideoBackgroundProps) {
   return (
     <div className={cn("absolute inset-0 overflow-hidden", className)}>
@@ -22,6 +22,7 @@ export function VideoBackground({
         muted
         loop
         playsInline
+        preload={preload}
         className="h-full w-full object-cover"
       >
         {webmSrc && <source src={webmSrc} type="video/webm" />}

@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
@@ -67,7 +65,7 @@ export function UseCasesSection() {
                 alt={useCase.title}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
-                unoptimized
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               {/* Dark overlay */}
               <div className="absolute inset-0 bg-black/20" />

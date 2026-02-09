@@ -1,5 +1,3 @@
-"use client";
-
 import { LogoMarquee } from "@/components/shared/logo-marquee";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import {

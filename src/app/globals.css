@@ -105,6 +105,10 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+  .content-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
+  }
 }
 
 @keyframes marquee {

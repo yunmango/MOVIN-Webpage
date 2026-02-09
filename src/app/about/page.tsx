@@ -1,8 +1,13 @@
-"use client";
-
+import type { Metadata } from "next";
 import Image from "next/image";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { IMAGES } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  title: "About MOVIN - Company History & Mission",
+  description:
+    "From Human Motion to Physical AI. MOVIN makes high-fidelity motion capture effortless and ubiquitous.",
+};
 
 /* -------------------------------------------------------------------------- */
 /*  Data                                                                       */

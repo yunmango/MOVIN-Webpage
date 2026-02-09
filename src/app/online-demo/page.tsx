@@ -1,7 +1,12 @@
-"use client";
-
+import type { Metadata } from "next";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
+
+export const metadata: Metadata = {
+  title: "Online Demo - MOVIN TRACIN",
+  description:
+    "See MOVIN TRACIN in action and schedule your free demo session. Effortless setup, no markers required.",
+};
 
 function HeroSection() {
   return (
@@ -53,7 +58,7 @@ function BookingSection() {
 
           <form
             className="mt-8 space-y-4 text-left"
-            onSubmit={(e) => e.preventDefault()}
+            action="#"
           >
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div>

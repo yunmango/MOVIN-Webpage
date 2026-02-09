@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";

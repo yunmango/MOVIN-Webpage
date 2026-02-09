@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import {
@@ -16,7 +17,7 @@ interface MobileMenuProps {
   scrolled: boolean;
 }
 
-export function MobileMenu({ scrolled }: MobileMenuProps) {
+export const MobileMenu = memo(function MobileMenu({ scrolled }: MobileMenuProps) {
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -66,4 +67,4 @@ export function MobileMenu({ scrolled }: MobileMenuProps) {
       </SheetContent>
     </Sheet>
   );
-}
+});

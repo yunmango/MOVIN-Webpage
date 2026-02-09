@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, memo } from "react";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { VIDEOS } from "@/lib/constants";
@@ -19,7 +19,10 @@ const SHOWCASE_CARDS: ShowcaseCard[] = [
   { title: "Robotics Control", mp4: VIDEOS.robotics, webm: VIDEOS.roboticsWebm },
 ];
 
-function VideoCard({ card }: { card: ShowcaseCard }) {
+// Pre-computed for marquee infinite loop
+const ALL_CARDS = [...SHOWCASE_CARDS, ...SHOWCASE_CARDS];
+
+const VideoCard = memo(function VideoCard({ card }: { card: ShowcaseCard }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
 
@@ -68,12 +71,9 @@ function VideoCard({ card }: { card: ShowcaseCard }) {
       </div>
     </div>
   );
-}
+});
 
 export function ShowcaseSection() {
-  // Duplicate cards for seamless infinite loop
-  const allCards = [...SHOWCASE_CARDS, ...SHOWCASE_CARDS];
-
   return (
     <SectionWrapper className="bg-white" fullWidth>
       <div className="mx-auto max-w-[1200px] px-6 text-center">
@@ -94,7 +94,7 @@ export function ShowcaseSection() {
             width: "fit-content",
           }}
         >
-          {allCards.map((card, i) => (
+          {ALL_CARDS.map((card, i) => (
             <VideoCard key={`${card.title}-${i}`} card={card} />
           ))}
         </div>

@@ -22,12 +22,12 @@ export function MissionSection() {
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-[1200px] px-6 py-[100px] text-center">
+      <div className="relative z-10 mx-auto max-w-[1200px] px-6 py-16 md:py-[100px] text-center">
         <ScrollReveal>
-          <h2 className="mx-auto max-w-3xl font-body text-[32px] font-normal text-[rgb(26,26,26)]" style={{ letterSpacing: '-0.48px', lineHeight: '48px' }}>
+          <h2 className="mx-auto max-w-3xl font-body text-[24px] md:text-[32px] font-normal text-[rgb(26,26,26)] tracking-[-0.48px] leading-[36px] md:leading-[48px]">
             From Human Motion to Physical AI.
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl font-body text-xl text-[rgb(102,102,102)]">
+          <p className="mx-auto mt-6 max-w-2xl font-body text-base md:text-xl text-[rgb(102,102,102)]">
             Our goal is to make high-fidelity motion capture effortless and
             ubiquitous. Scalability is central to that mission. By combining
             motion AI with on-device hardware, MOVIN makes it easier for more
@@ -36,8 +36,7 @@ export function MissionSection() {
           </p>
           <Link
             href="/about"
-            className="mt-8 inline-block rounded-lg bg-[rgb(26,26,26)] px-8 py-3 font-ui text-base font-light text-white transition-colors hover:bg-gray-800"
-            style={{ letterSpacing: '-0.48px' }}
+            className="mt-8 block md:inline-block rounded-lg bg-[rgb(26,26,26)] px-8 py-3 font-ui text-base font-light text-white transition-colors hover:bg-gray-800 tracking-[-0.48px] text-center"
           >
             About Us
           </Link>

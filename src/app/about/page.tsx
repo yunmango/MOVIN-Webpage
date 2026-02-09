@@ -159,7 +159,7 @@ function HeroSection() {
 
 function HistorySection() {
   return (
-    <section className="bg-white px-5 py-20">
+    <section className="bg-white px-5 py-12 md:py-20">
       <div className="mx-auto max-w-[1100px]">
         {/* Section Title */}
         <ScrollReveal>
@@ -177,7 +177,7 @@ function HistorySection() {
               {/* Year Header */}
               <ScrollReveal>
                 <div className="mb-8">
-                  <h2 className="text-[28px] font-bold text-[#333]">
+                  <h2 className="text-[22px] md:text-[28px] font-bold text-[#333]">
                     {yearData.year}
                   </h2>
                 </div>
@@ -190,16 +190,16 @@ function HistorySection() {
                     <div className="flex gap-5">
                       {/* Month */}
                       <div className="shrink-0 pt-0">
-                        <span className="text-[24px] font-normal text-[#333]">
+                        <span className="text-[16px] md:text-[24px] font-normal text-[#333]">
                           {event.month}
                         </span>
                       </div>
 
                       {/* Event Info */}
                       <div className="flex-1 min-w-0">
-                        <div className="pb-10">
+                        <div className="pb-6 md:pb-10">
                           <h3
-                            className={`text-[24px] font-bold ${
+                            className={`text-[16px] md:text-[24px] font-bold ${
                               event.isHighlight
                                 ? "text-[#c04bf7]"
                                 : "text-[#333]"
@@ -208,7 +208,7 @@ function HistorySection() {
                             {event.title}
                           </h3>
                           {event.description && (
-                            <p className="mt-1 text-[24px] font-normal text-[#333]">
+                            <p className="mt-1 text-[16px] md:text-[24px] font-normal text-[#333]">
                               {event.description}
                             </p>
                           )}
@@ -223,7 +223,7 @@ function HistorySection() {
                             alt={event.title}
                             width={400}
                             height={200}
-                            className="h-auto w-[400px] object-contain"
+                            className="h-auto w-[300px] lg:w-[400px] object-contain"
                           />
                         </div>
                       )}

@@ -59,10 +59,10 @@ export function EcosystemSection() {
     <SectionWrapper className="bg-white">
       <ScrollReveal>
         <div className="text-center">
-          <h2 className="font-ui text-[40px] font-normal text-[rgb(26,26,26)]" style={{ letterSpacing: '-0.8px' }}>
+          <h2 className="font-ui text-[24px] md:text-[40px] font-normal text-[rgb(26,26,26)] tracking-[-0.8px]">
             The MOVIN Ecosystem
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl font-body text-xl text-[rgb(102,102,102)]">
+          <p className="mx-auto mt-4 max-w-3xl font-body text-base md:text-xl text-[rgb(102,102,102)]">
             From flagship performance capture to multi-person tracking and an
             upcoming home motion console, MOVIN offers a complete motion capture
             system built for real-world deployment.
@@ -73,10 +73,10 @@ export function EcosystemSection() {
       <ScrollReveal delay={0.2}>
         {/* Tabs */}
         <div className="mt-10 flex justify-center">
-          <div className="flex w-full max-w-[600px] gap-1.5 rounded-3xl bg-white p-1.5 shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
+          <div className="flex w-full max-w-full md:max-w-[600px] gap-1.5 rounded-3xl bg-white p-1.5 shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
             <button
               onClick={() => setActiveTab("hardware")}
-              className={`flex-1 rounded-2xl px-8 py-3 font-ui text-sm font-medium transition-colors ${
+              className={`flex-1 rounded-2xl px-4 py-2.5 md:px-8 md:py-3 font-ui text-sm font-medium transition-colors ${
                 activeTab === "hardware"
                   ? "bg-gray-100 text-black"
                   : "text-gray-500 hover:text-black"
@@ -86,7 +86,7 @@ export function EcosystemSection() {
             </button>
             <button
               onClick={() => setActiveTab("software")}
-              className={`flex-1 rounded-2xl px-8 py-3 font-ui text-sm font-medium transition-colors ${
+              className={`flex-1 rounded-2xl px-4 py-2.5 md:px-8 md:py-3 font-ui text-sm font-medium transition-colors ${
                 activeTab === "software"
                   ? "bg-gray-100 text-black"
                   : "text-gray-500 hover:text-black"

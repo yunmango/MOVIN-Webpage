@@ -28,10 +28,10 @@ export function AiTechSection() {
     <SectionWrapper className="bg-white">
       <ScrollReveal>
         <div className="text-center">
-          <h2 className="font-ui text-[40px] font-normal text-[rgb(26,26,26)]" style={{ letterSpacing: '-0.8px' }}>
+          <h2 className="font-ui text-[24px] md:text-[40px] font-normal text-[rgb(26,26,26)] tracking-[-0.8px]">
             On-device AI that turns motion into output
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl font-body text-xl text-[rgb(102,102,102)]">
+          <p className="mx-auto mt-4 max-w-3xl font-body text-base md:text-xl text-[rgb(102,102,102)]">
             MOVIN&apos;s on-device AI fuses LiDAR point clouds and vision to turn
             raw capture into production-ready motion data. Built for
             entertainments, robotics, sports, and more.

@@ -5,14 +5,14 @@ import { SectionWrapper } from "@/components/shared/section-wrapper";
 
 function HeroSection() {
   return (
-    <section className="flex h-[60vh] items-center justify-center bg-black text-white">
+    <section className="flex h-[70vh] md:h-[60vh] items-center justify-center bg-black text-white">
       <div className="mx-auto max-w-3xl px-6 text-center">
-        <h1 className="font-ui text-4xl font-normal md:text-6xl">
+        <h1 className="font-ui text-3xl font-normal md:text-4xl lg:text-6xl">
           Effortless setup,
-          <br />
+          <br className="hidden md:block" />
           no markers required.
         </h1>
-        <p className="mt-6 font-body text-lg text-gray-400">
+        <p className="mt-6 font-body text-base md:text-lg text-gray-400">
           See MOVIN TRACIN in action and schedule your free demo session.
         </p>
       </div>

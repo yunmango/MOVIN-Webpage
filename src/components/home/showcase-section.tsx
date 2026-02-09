@@ -38,7 +38,7 @@ function VideoCard({ card }: { card: ShowcaseCard }) {
   };
 
   return (
-    <div className="relative w-[640px] flex-shrink-0 overflow-hidden rounded-3xl bg-gray-900" style={{ height: 360 }}>
+    <div className="relative w-[85vw] md:w-[640px] flex-shrink-0 overflow-hidden rounded-3xl bg-gray-900 h-[200px] md:h-[360px]">
       <video
         ref={videoRef}
         autoPlay
@@ -78,17 +78,17 @@ export function ShowcaseSection() {
     <SectionWrapper className="bg-white" fullWidth>
       <div className="mx-auto max-w-[1200px] px-6 text-center">
         <ScrollReveal>
-          <h2 className="font-ui text-[40px] font-normal text-[rgb(26,26,26)]" style={{ letterSpacing: '-0.8px' }}>
+          <h2 className="font-ui text-[24px] md:text-[40px] font-normal text-[rgb(26,26,26)] tracking-[-0.8px]">
             High-quality outputs, powered by MOVIN
           </h2>
-          <p className="mt-4 font-body text-xl text-[rgb(102,102,102)]">
+          <p className="mt-4 font-body text-base md:text-xl text-[rgb(102,102,102)]">
             See real-world applications across various industries.
           </p>
         </ScrollReveal>
       </div>
       <div className="mt-10 overflow-hidden">
         <div
-          className="flex gap-16 hover:[animation-play-state:paused]"
+          className="flex gap-4 md:gap-16 hover:[animation-play-state:paused]"
           style={{
             animation: "marquee 36s linear infinite",
             width: "fit-content",

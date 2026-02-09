@@ -16,12 +16,12 @@ export function PartnersSection() {
   return (
     <SectionWrapper className="bg-white">
       <ScrollReveal>
-        <h2 className="text-center font-ui text-xl font-normal text-[rgb(102,102,102)]" style={{ letterSpacing: '-0.48px' }}>
+        <h2 className="text-center font-ui text-xl font-normal text-[rgb(102,102,102)] tracking-[-0.48px]">
           Official Partners
         </h2>
       </ScrollReveal>
 
-      <div className="mt-12 flex flex-wrap items-center justify-center gap-x-16 gap-y-12 md:gap-x-24">
+      <div className="mt-12 flex flex-wrap items-center justify-center gap-x-10 gap-y-8 md:gap-x-16 lg:gap-x-24">
         <ScrollReveal delay={0}>
           <UnrealEngineLogo className="h-[42px] w-auto text-black" />
         </ScrollReveal>

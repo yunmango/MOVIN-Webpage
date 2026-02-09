@@ -59,10 +59,10 @@ export function EcosystemSection() {
     <SectionWrapper className="bg-white">
       <ScrollReveal>
         <div className="text-center">
-          <h2 className="font-ui text-3xl font-normal text-black md:text-4xl">
+          <h2 className="font-ui text-[40px] font-normal text-[rgb(26,26,26)]" style={{ letterSpacing: '-0.8px' }}>
             The MOVIN Ecosystem
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl font-body text-base text-gray-600 md:text-lg">
+          <p className="mx-auto mt-4 max-w-3xl font-body text-xl text-[rgb(102,102,102)]">
             From flagship performance capture to multi-person tracking and an
             upcoming home motion console, MOVIN offers a complete motion capture
             system built for real-world deployment.

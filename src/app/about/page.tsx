@@ -1,60 +1,253 @@
 "use client";
 
+import Image from "next/image";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
-import { SectionWrapper } from "@/components/shared/section-wrapper";
+import { IMAGES } from "@/lib/constants";
+
+/* -------------------------------------------------------------------------- */
+/*  Data                                                                       */
+/* -------------------------------------------------------------------------- */
+
+interface TimelineEvent {
+  month: string;
+  title: string;
+  description?: string;
+  image?: string;
+  isHighlight?: boolean; // purple "MOVIN Founded"
+}
+
+interface TimelineYear {
+  year: string;
+  events: TimelineEvent[];
+}
+
+const TIMELINE_DATA: TimelineYear[] = [
+  {
+    year: "2025",
+    events: [
+      {
+        month: "11.",
+        title: "DAN 25 & G-STAR 25",
+        description: "COEX, 6-7 November / BEXCO, 13-15 November",
+      },
+      {
+        month: "10.",
+        title: "MOVIN\u00A0Studio v2.0 Released",
+        description:
+          "Native Hand Tracking & Advanced FK, IK Retargeting Supported",
+      },
+      {
+        month: "08.",
+        title: "SIGGRAPH 25",
+        description: "Vancouver, 10-14 August",
+        image: IMAGES.historySig25,
+      },
+      {
+        month: "08.",
+        title: "Launch of New MOVIN\u00A0TRACIN",
+        description:
+          "Smaller, yet Smarter; Bring studio-quality mocap anywhere in a carry-on bag",
+        image: IMAGES.historyNewMovin,
+      },
+      {
+        month: "03.",
+        title: "GDC 2025",
+        description: "Live Dance Party Booth\u2014Come and Enjoy!",
+        image: IMAGES.historyGdc25,
+      },
+      {
+        month: "03.",
+        title: "Investment Secured",
+        description:
+          "Atinum Investment, DSC Investment & Schmidt, Naver D2SF, and Krew Capital",
+        image: IMAGES.historyInvestment2,
+      },
+    ],
+  },
+  {
+    year: "2024",
+    events: [
+      {
+        month: "09.",
+        title: "Daejeon Arts Center & KAIST",
+        description: "Science and Art Week Project",
+      },
+      {
+        month: "07.",
+        title: "SIGGRAPH 24",
+        description: "Real-Time LIVE Presenter",
+        image: IMAGES.historySig24,
+      },
+      {
+        month: "05.",
+        title: "GDC 2024",
+        description: "Launch of MOVIN TRACIN - the first",
+        image: IMAGES.historyGdc24,
+      },
+      {
+        month: "02.",
+        title: "Lotte World Adventure",
+        description: "35th Anniversary Facade Interactive Photo Zone",
+        image: IMAGES.historyLotte,
+      },
+    ],
+  },
+  {
+    year: "2023",
+    events: [
+      {
+        month: "12.",
+        title: "Content Accelerating Program",
+        description: "<Blockbuster> 1st Prize Awarded",
+      },
+      {
+        month: "11.",
+        title: "Investment Secured",
+        description: "Bluepoint Partners, Naver D2SF, and Krew Capital",
+        image: IMAGES.historyInvestment,
+      },
+      {
+        month: "10.",
+        title: "2023 Data Voucher Program",
+      },
+      {
+        month: "10.",
+        title: "Naver D2SF Campus Tech Startup Contest",
+        image: IMAGES.historyD2sf,
+      },
+      {
+        month: "10.",
+        title: "MOVIN Founded",
+        isHighlight: true,
+      },
+      {
+        month: "06.",
+        title: "KAIST E*5 Startup Competition",
+        description: "Grand Prize",
+        image: IMAGES.historyKaist,
+      },
+    ],
+  },
+];
+
+/* -------------------------------------------------------------------------- */
+/*  Hero Section                                                               */
+/* -------------------------------------------------------------------------- */
 
 function HeroSection() {
   return (
-    <section className="flex min-h-screen items-center justify-center bg-white px-6 py-32">
-      <ScrollReveal>
-        <h1 className="mx-auto max-w-4xl text-center font-heading text-4xl font-light leading-snug text-black md:text-6xl lg:text-7xl">
-          We believe motion is the most natural interface between humans and
-          machines.
-        </h1>
-      </ScrollReveal>
+    <section className="bg-white pt-24 pb-8">
+      <div className="mx-auto max-w-[1400px] px-5 md:px-[116px] md:ml-5">
+        <div className="max-w-[780px]">
+          <ScrollReveal>
+            <h1 className="font-body text-[36px] leading-[54px] font-normal text-[#333] md:text-[48px] md:leading-[72px]">
+              Every person moves like they write, with rhythm, intention, and
+              personality. MOVIN turns motion into immersion, on an endless
+              canvas of unbounded movement and creativity, all brought to life
+              by technology.
+            </h1>
+          </ScrollReveal>
+        </div>
+      </div>
     </section>
   );
 }
 
-function ContentSection() {
+/* -------------------------------------------------------------------------- */
+/*  History / Timeline Section                                                 */
+/* -------------------------------------------------------------------------- */
+
+function HistorySection() {
   return (
-    <SectionWrapper className="bg-gray-50">
-      <div className="mx-auto max-w-3xl space-y-8">
+    <section className="bg-white px-5 py-20">
+      <div className="mx-auto max-w-[1100px]">
+        {/* Section Title */}
         <ScrollReveal>
-          <p className="font-body text-lg leading-relaxed text-gray-700 md:text-xl">
-            MOVIN is a technology company dedicated to making real-time motion
-            capture accessible to everyone. We develop LiDAR-powered hardware
-            and AI software that captures human movement with unprecedented ease
-            and accuracy.
-          </p>
+          <div className="mb-12 text-center">
+            <span className="text-[14px] font-extrabold text-[#c04bf7]">
+              MOVIN HISTORY
+            </span>
+          </div>
         </ScrollReveal>
-        <ScrollReveal delay={0.1}>
-          <p className="font-body text-lg leading-relaxed text-gray-700 md:text-xl">
-            Our mission is to build the infrastructure for a world where your
-            body is the controller — for games, robots, digital humans, and
-            beyond. We envision a future where motion capture is not limited to
-            Hollywood studios or expensive lab setups, but available to any
-            creator, anywhere.
-          </p>
-        </ScrollReveal>
-        <ScrollReveal delay={0.2}>
-          <p className="font-body text-lg leading-relaxed text-gray-700 md:text-xl">
-            Founded by a team of engineers and artists, MOVIN combines deep
-            expertise in computer vision, sensor fusion, and real-time AI to
-            deliver products that bridge the gap between human expression and
-            digital creation.
-          </p>
-        </ScrollReveal>
+
+        {/* Timeline */}
+        <div className="space-y-16">
+          {TIMELINE_DATA.map((yearData) => (
+            <div key={yearData.year}>
+              {/* Year Header */}
+              <ScrollReveal>
+                <div className="mb-8">
+                  <h2 className="text-[28px] font-bold text-[#333]">
+                    {yearData.year}
+                  </h2>
+                </div>
+              </ScrollReveal>
+
+              {/* Events */}
+              <div className="space-y-0">
+                {yearData.events.map((event, i) => (
+                  <ScrollReveal key={`${yearData.year}-${i}`} delay={0.03 * i}>
+                    <div className="flex gap-5">
+                      {/* Month */}
+                      <div className="shrink-0 pt-0">
+                        <span className="text-[24px] font-normal text-[#333]">
+                          {event.month}
+                        </span>
+                      </div>
+
+                      {/* Event Info */}
+                      <div className="flex-1 min-w-0">
+                        <div className="pb-10">
+                          <h3
+                            className={`text-[24px] font-bold ${
+                              event.isHighlight
+                                ? "text-[#c04bf7]"
+                                : "text-[#333]"
+                            }`}
+                          >
+                            {event.title}
+                          </h3>
+                          {event.description && (
+                            <p className="mt-1 text-[24px] font-normal text-[#333]">
+                              {event.description}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Image (if any) */}
+                      {event.image && (
+                        <div className="hidden md:block shrink-0">
+                          <Image
+                            src={event.image}
+                            alt={event.title}
+                            width={400}
+                            height={200}
+                            className="h-auto w-[400px] object-contain"
+                          />
+                        </div>
+                      )}
+                    </div>
+                  </ScrollReveal>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </SectionWrapper>
+    </section>
   );
 }
+
+/* -------------------------------------------------------------------------- */
+/*  Page                                                                       */
+/* -------------------------------------------------------------------------- */
 
 export default function AboutPage() {
   return (
     <>
       <HeroSection />
-      <ContentSection />
+      <HistorySection />
     </>
   );
 }

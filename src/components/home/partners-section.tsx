@@ -16,44 +16,44 @@ export function PartnersSection() {
   return (
     <SectionWrapper className="bg-white">
       <ScrollReveal>
-        <h2 className="text-center font-ui text-3xl font-normal text-black md:text-4xl">
+        <h2 className="text-center font-ui text-xl font-normal text-[rgb(102,102,102)]" style={{ letterSpacing: '-0.48px' }}>
           Official Partners
         </h2>
       </ScrollReveal>
 
-      <div className="mt-12 flex flex-wrap items-center justify-center gap-x-24 gap-y-12">
+      <div className="mt-12 flex flex-wrap items-center justify-center gap-x-16 gap-y-12 md:gap-x-24">
         <ScrollReveal delay={0}>
-          <UnrealEngineLogo className="h-10 w-auto text-black" />
+          <UnrealEngineLogo className="h-[42px] w-auto text-black" />
         </ScrollReveal>
         <ScrollReveal delay={0.05}>
-          <NotchLogo className="h-8 w-auto text-black" />
+          <NotchLogo className="h-[30px] w-auto text-black" />
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <TouchDesignerLogo className="h-10 w-auto text-black" />
+          <TouchDesignerLogo className="h-[38px] w-auto text-black" />
         </ScrollReveal>
         <ScrollReveal delay={0.15}>
-          <DisguiseLogo className="h-10 w-auto text-black" />
+          <DisguiseLogo className="h-[42px] w-auto text-black" />
         </ScrollReveal>
         <ScrollReveal delay={0.2}>
           <Image
             src={IMAGES.partner07}
             alt="Warudo"
-            width={120}
-            height={48}
-            className="h-6 w-auto object-contain"
+            width={148}
+            height={38}
+            className="h-[38px] w-auto object-contain"
             unoptimized
           />
         </ScrollReveal>
         <ScrollReveal delay={0.25}>
-          <RokokoLogo className="h-6 w-auto text-black" />
+          <RokokoLogo className="h-[23px] w-auto text-black" />
         </ScrollReveal>
         <ScrollReveal delay={0.3}>
           <Image
             src={IMAGES.partner06}
             alt="Manus"
-            width={120}
-            height={48}
-            className="h-6 w-auto object-contain"
+            width={200}
+            height={34}
+            className="h-[34px] w-auto object-contain"
             unoptimized
           />
         </ScrollReveal>

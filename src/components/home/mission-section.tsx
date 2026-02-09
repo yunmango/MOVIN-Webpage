@@ -3,25 +3,31 @@
 import Link from "next/link";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
+import { VideoBackground } from "@/components/shared/video-background";
+import { VIDEOS } from "@/lib/constants";
 
 export function MissionSection() {
   return (
     <SectionWrapper className="relative overflow-hidden" fullWidth>
-      {/* Rainbow gradient background */}
+      <VideoBackground
+        mp4Src={VIDEOS.composition}
+        webmSrc={VIDEOS.compositionWebm}
+      />
+      {/* White gradient overlay matching original site */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 z-[1]"
         style={{
-          background:
-            "linear-gradient(135deg, #fef3f2 0%, #fef9ee 15%, #fefce8 30%, #f0fdf4 45%, #ecfeff 60%, #eff6ff 75%, #faf5ff 90%, #fdf2f8 100%)",
+          backgroundImage:
+            "linear-gradient(rgb(255,255,255) 1%, rgba(255,255,255,0.75) 25%, rgba(255,255,255,0.75) 75%, rgb(255,255,255) 99%)",
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-[1200px] px-6 text-center">
+      <div className="relative z-10 mx-auto max-w-[1200px] px-6 py-[100px] text-center">
         <ScrollReveal>
-          <h2 className="mx-auto max-w-3xl font-ui text-3xl font-normal leading-snug text-black md:text-5xl">
+          <h2 className="mx-auto max-w-3xl font-body text-[32px] font-normal text-[rgb(26,26,26)]" style={{ letterSpacing: '-0.48px', lineHeight: '48px' }}>
             From Human Motion to Physical AI.
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl font-body text-base text-gray-600 md:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl font-body text-xl text-[rgb(102,102,102)]">
             Our goal is to make high-fidelity motion capture effortless and
             ubiquitous. Scalability is central to that mission. By combining
             motion AI with on-device hardware, MOVIN makes it easier for more
@@ -30,7 +36,8 @@ export function MissionSection() {
           </p>
           <Link
             href="/about"
-            className="mt-8 inline-block rounded-full bg-black px-8 py-3 font-ui text-sm font-medium text-white transition-colors hover:bg-gray-800"
+            className="mt-8 inline-block rounded-lg bg-[rgb(26,26,26)] px-8 py-3 font-ui text-base font-light text-white transition-colors hover:bg-gray-800"
+            style={{ letterSpacing: '-0.48px' }}
           >
             About Us
           </Link>

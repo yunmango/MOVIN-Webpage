@@ -27,14 +27,16 @@ export function AiTechSection() {
   return (
     <SectionWrapper className="bg-white">
       <ScrollReveal>
-        <h2 className="font-ui text-3xl font-normal text-black md:text-4xl">
-          On-device AI that turns motion into output
-        </h2>
-        <p className="mt-4 max-w-3xl font-body text-base text-gray-600 md:text-lg">
-          MOVIN&apos;s on-device AI fuses LiDAR point clouds and vision to turn
-          raw capture into production-ready motion data. Built for
-          entertainments, robotics, sports, and more.
-        </p>
+        <div className="text-center">
+          <h2 className="font-ui text-[40px] font-normal text-[rgb(26,26,26)]" style={{ letterSpacing: '-0.8px' }}>
+            On-device AI that turns motion into output
+          </h2>
+          <p className="mx-auto mt-4 max-w-3xl font-body text-xl text-[rgb(102,102,102)]">
+            MOVIN&apos;s on-device AI fuses LiDAR point clouds and vision to turn
+            raw capture into production-ready motion data. Built for
+            entertainments, robotics, sports, and more.
+          </p>
+        </div>
       </ScrollReveal>
 
       <ScrollReveal delay={0.2}>

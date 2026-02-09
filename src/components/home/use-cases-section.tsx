@@ -48,10 +48,10 @@ export function UseCasesSection() {
   return (
     <SectionWrapper className="bg-white">
       <ScrollReveal>
-        <h2 className="text-center font-ui text-3xl font-normal text-black md:text-4xl">
+        <h2 className="text-center font-ui text-[40px] font-normal text-[rgb(26,26,26)]" style={{ letterSpacing: '-0.8px' }}>
           Built for real-world applications
         </h2>
-        <p className="mx-auto mt-4 max-w-3xl text-center font-body text-base text-gray-600 md:text-lg">
+        <p className="mx-auto mt-4 max-w-3xl text-center font-body text-xl text-[rgb(102,102,102)]">
           MOVIN supports motion capture workflows across industries, from
           animation and streaming to large-scale venues and high-stakes
           deployment.

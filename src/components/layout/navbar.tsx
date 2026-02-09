@@ -8,7 +8,7 @@ import { NAV_ITEMS, NAV_CTA } from "@/data/navigation";
 import { MobileMenu } from "./mobile-menu";
 import { cn } from "@/lib/utils";
 
-const DARK_HERO_ROUTES = ["/", "/tracin", "/downloads", "/online-demo"];
+const DARK_HERO_ROUTES = ["/", "/online-demo"];
 
 export function Navbar() {
   const scrolled = useScrollPosition(50);
@@ -43,7 +43,7 @@ export function Navbar() {
               target={item.external ? "_blank" : undefined}
               rel={item.external ? "noopener noreferrer" : undefined}
               className={cn(
-                "flex items-center gap-1 font-ui text-sm font-medium transition-colors duration-300 hover:opacity-70",
+                "flex items-center gap-1 font-ui text-sm font-light transition-colors duration-300 hover:opacity-70",
                 useDarkText ? "text-black" : "text-white"
               )}
             >
@@ -60,12 +60,7 @@ export function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <Link
             href={NAV_CTA.demo.href}
-            className={cn(
-              "rounded-full border px-5 py-2 font-ui text-sm font-medium transition-all duration-300 hover:opacity-80",
-              useDarkText
-                ? "border-black text-black hover:bg-black hover:text-white"
-                : "border-white text-white hover:bg-white hover:text-black"
-            )}
+            className="flex h-10 items-center rounded-lg bg-[rgb(26,26,26)] px-[15px] font-ui text-sm font-light text-white transition-opacity duration-300 hover:opacity-80"
           >
             {NAV_CTA.demo.label}
           </Link>
@@ -73,12 +68,7 @@ export function Navbar() {
             href={NAV_CTA.purchase.href}
             target="_blank"
             rel="noopener noreferrer"
-            className={cn(
-              "rounded-full px-5 py-2 font-ui text-sm font-medium transition-all duration-300",
-              useDarkText
-                ? "bg-black text-white hover:bg-gray-800"
-                : "bg-white text-black hover:bg-gray-200"
-            )}
+            className="flex h-10 items-center rounded-lg bg-[rgb(26,26,26)] px-[15px] font-ui text-sm font-light text-white transition-opacity duration-300 hover:opacity-80"
           >
             {NAV_CTA.purchase.label}
           </Link>

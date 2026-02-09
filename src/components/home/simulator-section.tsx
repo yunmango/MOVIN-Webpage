@@ -5,13 +5,13 @@ import { ScrollReveal } from "@/components/shared/scroll-reveal";
 
 export function SimulatorSection() {
   return (
-    <SectionWrapper className="bg-gray-950 text-white">
+    <SectionWrapper className="bg-white">
       <ScrollReveal>
         <div className="text-center">
-          <h2 className="font-ui text-3xl font-normal md:text-4xl">
+          <h2 className="font-ui text-[40px] font-normal text-[rgb(26,26,26)]" style={{ letterSpacing: '-0.8px' }}>
             Plan your setup in 3D
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl font-body text-base text-gray-400 md:text-lg">
+          <p className="mx-auto mt-4 max-w-3xl font-body text-xl text-[rgb(102,102,102)]">
             Use our 3D simulator to map your mocap zone, check lighting
             conditions, and preview what spaces work best before you deploy.
           </p>

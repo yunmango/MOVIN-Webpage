@@ -71,12 +71,12 @@ function VideoCard({ card }: { card: ShowcaseCard }) {
 export function ShowcaseSection() {
   return (
     <SectionWrapper className="bg-white" fullWidth>
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-[1200px] px-6 text-center">
         <ScrollReveal>
-          <h2 className="font-ui text-3xl font-normal text-black md:text-4xl">
+          <h2 className="font-ui text-[40px] font-normal text-[rgb(26,26,26)]" style={{ letterSpacing: '-0.8px' }}>
             High-quality outputs, powered by MOVIN
           </h2>
-          <p className="mt-4 font-body text-base text-gray-600 md:text-lg">
+          <p className="mt-4 font-body text-xl text-[rgb(102,102,102)]">
             See real-world applications across various industries.
           </p>
         </ScrollReveal>

@@ -12,12 +12,12 @@ export function HeroSection() {
         overlayClassName="bg-black/30"
       />
       <div className="relative z-10 text-center">
-        <h1 className="font-ui text-5xl font-normal leading-tight text-white md:text-7xl">
+        <h1 className="font-ui font-normal text-white" style={{ fontSize: '64px', lineHeight: '76.8px', letterSpacing: '-1.6px' }}>
           Real-time motion capture,
           <br />
           made interactive.
         </h1>
-        <p className="mt-6 font-body text-lg text-white/80 md:text-xl">
+        <p className="mt-6 font-body text-xl text-white">
           Build interactive experiences with live motion data.
         </p>
       </div>

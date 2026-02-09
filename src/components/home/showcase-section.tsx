@@ -5,7 +5,6 @@ import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { VIDEOS } from "@/lib/constants";
 import { Pause, Play } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 interface ShowcaseCard {
   title: string;
@@ -39,7 +38,7 @@ function VideoCard({ card }: { card: ShowcaseCard }) {
   };
 
   return (
-    <div className="group relative aspect-[16/10] w-[400px] flex-shrink-0 overflow-hidden rounded-2xl bg-gray-900 md:w-[500px]">
+    <div className="relative w-[640px] flex-shrink-0 overflow-hidden rounded-3xl bg-gray-900" style={{ height: 360 }}>
       <video
         ref={videoRef}
         autoPlay
@@ -53,7 +52,10 @@ function VideoCard({ card }: { card: ShowcaseCard }) {
       </video>
       <div className="absolute inset-x-0 bottom-0 flex items-center justify-between p-4">
         <button
-          onClick={togglePlay}
+          onClick={(e) => {
+            e.stopPropagation();
+            togglePlay();
+          }}
           className="rounded-full bg-black/50 p-2 text-white backdrop-blur-sm transition-colors hover:bg-black/70"
           aria-label={isPlaying ? "Pause video" : "Play video"}
         >
@@ -69,6 +71,9 @@ function VideoCard({ card }: { card: ShowcaseCard }) {
 }
 
 export function ShowcaseSection() {
+  // Duplicate cards for seamless infinite loop
+  const allCards = [...SHOWCASE_CARDS, ...SHOWCASE_CARDS];
+
   return (
     <SectionWrapper className="bg-white" fullWidth>
       <div className="mx-auto max-w-[1200px] px-6 text-center">
@@ -81,10 +86,18 @@ export function ShowcaseSection() {
           </p>
         </ScrollReveal>
       </div>
-      <div className="mt-10 flex gap-6 overflow-x-auto px-6 pb-4 scrollbar-hide">
-        {SHOWCASE_CARDS.map((card) => (
-          <VideoCard key={card.title} card={card} />
-        ))}
+      <div className="mt-10 overflow-hidden">
+        <div
+          className="flex gap-16 hover:[animation-play-state:paused]"
+          style={{
+            animation: "marquee 36s linear infinite",
+            width: "fit-content",
+          }}
+        >
+          {allCards.map((card, i) => (
+            <VideoCard key={`${card.title}-${i}`} card={card} />
+          ))}
+        </div>
       </div>
     </SectionWrapper>
   );

@@ -7,6 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Original site: https://www.movin3d.com/
 - After any code change, always use Playwriter MCP to compare the local result against the original site and verify they match
 - Package manager: pnpm (do not use npm)
+- Must optimize for both Desktop and Mobile (responsive design). Replicate the original site's mobile layout exactly
 
 ## Commands
 

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
+import { TiltCard } from "@/components/shared/tilt-card";
 import { IMAGES } from "@/lib/constants";
 
 const USE_CASES = [
@@ -59,26 +60,28 @@ export function UseCasesSection() {
       <div className="mt-12 md:mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {USE_CASES.map((useCase, i) => (
           <ScrollReveal key={useCase.title} delay={i * 0.1}>
-            <div className="group relative h-[255px] overflow-hidden rounded-3xl">
-              <Image
-                src={useCase.image}
-                alt={useCase.title}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              />
-              {/* Dark overlay */}
-              <div className="absolute inset-0 bg-black/20" />
-              {/* Content overlay */}
-              <div className="absolute inset-x-0 bottom-0 p-6">
-                <h3 className="font-ui text-xl font-medium text-white md:text-2xl">
-                  {useCase.title}
-                </h3>
-                <p className="mt-2 max-h-0 overflow-hidden font-body text-sm leading-relaxed text-white/90 transition-all duration-500 group-hover:max-h-40">
-                  {useCase.description}
-                </p>
+            <TiltCard maxDeg={7}>
+              <div className="group relative h-[255px] overflow-hidden rounded-3xl">
+                <Image
+                  src={useCase.image}
+                  alt={useCase.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                {/* Dark overlay */}
+                <div className="absolute inset-0 bg-black/20" />
+                {/* Content overlay */}
+                <div className="absolute inset-x-0 bottom-0 p-6">
+                  <h3 className="font-ui text-xl font-medium text-white md:text-2xl">
+                    {useCase.title}
+                  </h3>
+                  <p className="mt-2 max-h-0 overflow-hidden font-body text-sm leading-relaxed text-white/90 transition-all duration-500 group-hover:max-h-40">
+                    {useCase.description}
+                  </p>
+                </div>
               </div>
-            </div>
+            </TiltCard>
           </ScrollReveal>
         ))}
       </div>

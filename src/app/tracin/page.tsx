@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
+import { TiltCard } from "@/components/shared/tilt-card";
 import { IMAGES, SHOP_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -112,26 +113,28 @@ function HighlightsSection() {
         <div className="mt-14 md:mt-16 grid grid-cols-1 gap-5 md:grid-cols-3">
           {HIGHLIGHTS.map((item, i) => (
             <ScrollReveal key={item.title} delay={0.05 * (i + 1)}>
-              <div className="group overflow-hidden rounded-2xl bg-[#f9f9f9] transition-all duration-300 hover:bg-white hover:shadow-lg">
-                <div className="p-6 pb-0">
-                  <h3 className="font-ui text-[20px] font-normal text-[#1a1a1a]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 font-body text-[14px] leading-[1.5] text-[#666]">
-                    {item.description}
-                  </p>
+              <TiltCard maxDeg={7}>
+                <div className="group overflow-hidden rounded-2xl bg-[#f9f9f9] transition-all duration-300 hover:bg-white hover:shadow-lg">
+                  <div className="p-6 pb-0">
+                    <h3 className="font-ui text-[20px] font-normal text-[#1a1a1a]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 font-body text-[14px] leading-[1.5] text-[#666]">
+                      {item.description}
+                    </p>
+                  </div>
+                  <div className="mt-4 overflow-hidden px-6 pb-6">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      width={800}
+                      height={800}
+                      className="w-full rounded-[8px] transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 340px"
+                    />
+                  </div>
                 </div>
-                <div className="mt-4 overflow-hidden px-6 pb-6">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    width={800}
-                    height={800}
-                    className="w-full rounded-[8px] transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 340px"
-                  />
-                </div>
-              </div>
+              </TiltCard>
             </ScrollReveal>
           ))}
         </div>

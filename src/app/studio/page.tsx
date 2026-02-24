@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
+import { TiltCard } from "@/components/shared/tilt-card";
 import { IMAGES } from "@/lib/constants";
 import { PlansSection } from "@/components/studio/plans-section";
 
@@ -185,43 +186,47 @@ function FeaturesSection() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {/* Capture Area */}
           <ScrollReveal>
-            <div className="group overflow-hidden rounded-3xl bg-[#fafafa] p-6">
-              <div className="overflow-hidden rounded-2xl">
-                <Image
-                  src={IMAGES.studioArea}
-                  alt="Mocap area diagram"
-                  width={581}
-                  height={500}
-                  className="w-full transition-transform duration-500 group-hover:scale-105"
-                />
+            <TiltCard maxDeg={7}>
+              <div className="group overflow-hidden rounded-3xl bg-[#fafafa] p-6">
+                <div className="overflow-hidden rounded-2xl">
+                  <Image
+                    src={IMAGES.studioArea}
+                    alt="Mocap area diagram"
+                    width={581}
+                    height={500}
+                    className="w-full transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <p className="mt-6 font-body text-base leading-[1.7] text-[#666]">
+                  From a cozy 1m x 1m home setup to a full 5m x 5m studio space,
+                  MOVIN TRACIN adapts to your environment — now with 2.5x more
+                  capture area than before.
+                </p>
               </div>
-              <p className="mt-6 font-body text-base leading-[1.7] text-[#666]">
-                From a cozy 1m x 1m home setup to a full 5m x 5m studio space,
-                MOVIN TRACIN adapts to your environment — now with 2.5x more
-                capture area than before.
-              </p>
-            </div>
+            </TiltCard>
           </ScrollReveal>
 
           {/* Glove Integration */}
           <ScrollReveal delay={0.1}>
-            <div className="group overflow-hidden rounded-3xl bg-[#fafafa] p-6">
-              <div className="overflow-hidden rounded-2xl">
-                <Image
-                  src={IMAGES.studioGlove}
-                  alt="Hand capture with gloves"
-                  width={581}
-                  height={500}
-                  className="w-full transition-transform duration-500 group-hover:scale-105"
-                />
+            <TiltCard maxDeg={7}>
+              <div className="group overflow-hidden rounded-3xl bg-[#fafafa] p-6">
+                <div className="overflow-hidden rounded-2xl">
+                  <Image
+                    src={IMAGES.studioGlove}
+                    alt="Hand capture with gloves"
+                    width={581}
+                    height={500}
+                    className="w-full transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <p className="mt-6 font-body text-base leading-[1.7] text-[#666]">
+                  Integrate third-party gloves for reliable hand capture. The
+                  system&apos;s subtle engineering blends glove input into
+                  full-body motion, maintaining a natural articulation even in
+                  complex poses or transitions.
+                </p>
               </div>
-              <p className="mt-6 font-body text-base leading-[1.7] text-[#666]">
-                Integrate third-party gloves for reliable hand capture. The
-                system&apos;s subtle engineering blends glove input into
-                full-body motion, maintaining a natural articulation even in
-                complex poses or transitions.
-              </p>
-            </div>
+            </TiltCard>
           </ScrollReveal>
         </div>
       </div>
@@ -243,109 +248,119 @@ function TechnicalSpecSection() {
         <ScrollReveal delay={0.1}>
           <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
             {/* Materials */}
-            <div className="rounded-2xl border border-[#e8e8e8] bg-white p-6 transition-shadow hover:shadow-md">
-              <p className="text-center font-body text-sm text-gray-500">
-                Materials
-              </p>
-              <p className="mt-4 text-center font-body text-lg font-bold text-[#1a1a1a]">
-                Anodized
-                <br />
-                Aluminum
-              </p>
-            </div>
+            <TiltCard maxDeg={5}>
+              <div className="rounded-2xl border border-[#e8e8e8] bg-white p-6 transition-shadow hover:shadow-md">
+                <p className="text-center font-body text-sm text-gray-500">
+                  Materials
+                </p>
+                <p className="mt-4 text-center font-body text-lg font-bold text-[#1a1a1a]">
+                  Anodized
+                  <br />
+                  Aluminum
+                </p>
+              </div>
+            </TiltCard>
 
             {/* MoCap Range */}
-            <div className="rounded-2xl border border-[#e8e8e8] bg-white p-6 transition-shadow hover:shadow-md">
-              <p className="text-center font-body text-sm text-gray-500">
-                MoCap Range
-              </p>
-              <p className="mt-4 text-center font-body text-lg font-bold text-[#1a1a1a]">
-                1m x 1m
-                <br />
-                <span className="text-sm font-normal text-gray-400">to</span>
-                <br />
-                5m x 5m
-              </p>
-            </div>
+            <TiltCard maxDeg={5}>
+              <div className="rounded-2xl border border-[#e8e8e8] bg-white p-6 transition-shadow hover:shadow-md">
+                <p className="text-center font-body text-sm text-gray-500">
+                  MoCap Range
+                </p>
+                <p className="mt-4 text-center font-body text-lg font-bold text-[#1a1a1a]">
+                  1m x 1m
+                  <br />
+                  <span className="text-sm font-normal text-gray-400">to</span>
+                  <br />
+                  5m x 5m
+                </p>
+              </div>
+            </TiltCard>
 
             {/* MoCap Spec */}
-            <div className="rounded-2xl border border-[#e8e8e8] bg-white p-6 transition-shadow hover:shadow-md">
-              <p className="text-center font-body text-sm text-gray-500">
-                MoCap Spec
-              </p>
-              <div className="mt-4 space-y-2">
-                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                  <span>Body</span>
-                  <span>22 joints</span>
-                </div>
-                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                  <span>Hands</span>
-                  <span>30 joints</span>
-                </div>
-                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                  <span>Latency</span>
-                  <span>&lt; 0.1sec</span>
+            <TiltCard maxDeg={5}>
+              <div className="rounded-2xl border border-[#e8e8e8] bg-white p-6 transition-shadow hover:shadow-md">
+                <p className="text-center font-body text-sm text-gray-500">
+                  MoCap Spec
+                </p>
+                <div className="mt-4 space-y-2">
+                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                    <span>Body</span>
+                    <span>22 joints</span>
+                  </div>
+                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                    <span>Hands</span>
+                    <span>30 joints</span>
+                  </div>
+                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                    <span>Latency</span>
+                    <span>&lt; 0.1sec</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </TiltCard>
           </div>
         </ScrollReveal>
 
         <ScrollReveal delay={0.15}>
           <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
             {/* Size & Weight */}
-            <div className="rounded-2xl border border-[#e8e8e8] bg-white p-6 transition-shadow hover:shadow-md">
-              <p className="text-center font-body text-sm text-gray-500">
-                Size & Weight
-              </p>
-              <div className="mt-4 space-y-2">
-                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                  <span>Width</span>
-                  <span>87mm</span>
-                </div>
-                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                  <span>Depth</span>
-                  <span>225mm</span>
-                </div>
-                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                  <span>Height</span>
-                  <span>165mm</span>
-                </div>
-                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                  <span>Weight</span>
-                  <span>&lt; 3kg</span>
+            <TiltCard maxDeg={5}>
+              <div className="rounded-2xl border border-[#e8e8e8] bg-white p-6 transition-shadow hover:shadow-md">
+                <p className="text-center font-body text-sm text-gray-500">
+                  Size & Weight
+                </p>
+                <div className="mt-4 space-y-2">
+                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                    <span>Width</span>
+                    <span>87mm</span>
+                  </div>
+                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                    <span>Depth</span>
+                    <span>225mm</span>
+                  </div>
+                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                    <span>Height</span>
+                    <span>165mm</span>
+                  </div>
+                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                    <span>Weight</span>
+                    <span>&lt; 3kg</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </TiltCard>
 
             {/* System Requirements */}
-            <div className="rounded-2xl border border-[#e8e8e8] bg-white p-6 transition-shadow hover:shadow-md">
-              <p className="text-center font-body text-sm text-gray-500">
-                System Requirements
-              </p>
-              <div className="mt-4 space-y-2">
-                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                  <span>O.S.</span>
-                  <span>Only Windows Provided</span>
-                </div>
-                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                  <span>CPU</span>
-                  <span>3.0+ GHz i7</span>
-                </div>
-                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                  <span>RAM</span>
-                  <span>&gt; 16GB</span>
-                </div>
-                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                  <span>VGA</span>
-                  <span className="text-right">
-                    Nvidia RTX 3060 /
-                    <br />
-                    AMD 6600xt
-                  </span>
+            <TiltCard maxDeg={5}>
+              <div className="rounded-2xl border border-[#e8e8e8] bg-white p-6 transition-shadow hover:shadow-md">
+                <p className="text-center font-body text-sm text-gray-500">
+                  System Requirements
+                </p>
+                <div className="mt-4 space-y-2">
+                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                    <span>O.S.</span>
+                    <span>Only Windows Provided</span>
+                  </div>
+                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                    <span>CPU</span>
+                    <span>3.0+ GHz i7</span>
+                  </div>
+                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                    <span>RAM</span>
+                    <span>&gt; 16GB</span>
+                  </div>
+                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                    <span>VGA</span>
+                    <span className="text-right">
+                      Nvidia RTX 3060 /
+                      <br />
+                      AMD 6600xt
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </TiltCard>
           </div>
         </ScrollReveal>
 

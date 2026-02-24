@@ -5,6 +5,7 @@ import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import Link from "next/link";
 import { IMAGES } from "@/lib/constants";
+import { useTilt } from "@/hooks/use-tilt";
 
 const HARDWARE_PRODUCTS = [
   {
@@ -98,53 +99,80 @@ export function EcosystemSection() {
         </div>
 
         {/* Product Cards */}
-        <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
+        <div className={`mt-8 flex flex-col gap-4 md:flex-row ${activeTab === "software" ? "md:justify-center" : ""}`}>
           {products.map((product) => (
-            <div
+            <EcosystemCard
               key={product.name}
-              className="group relative flex min-h-[340px] flex-col overflow-hidden rounded-3xl bg-cover bg-center p-6"
-              style={{ backgroundImage: `url(${product.image})` }}
-            >
-              {/* Dark overlay */}
-              <div className="absolute inset-0 bg-black/40" />
-
-              {/* Content */}
-              <div className="relative z-10 flex items-center gap-2">
-                <h3 className="font-ui text-2xl font-semibold text-white">
-                  {product.name}
-                </h3>
-                {product.available && (
-                  <svg
-                    viewBox="0 0 15 15"
-                    className="h-4 w-4 text-white"
-                    fill="currentColor"
-                  >
-                    <path d="M9.95 7.5a.45.45 0 0 1-.132.319l-3 3a.45.45 0 0 1-.636-.637L8.863 7.5L6.182 4.82l-.058-.07a.451.451 0 0 1 .624-.625l.07.058l3 3a.45.45 0 0 1 .132.318" />
-                  </svg>
-                )}
-              </div>
-
-              {product.badge && (
-                <span className="relative z-10 mt-1 inline-block w-fit rounded-full bg-white/20 px-3 py-0.5 text-xs font-medium text-white/80">
-                  {product.badge}
-                </span>
-              )}
-
-              <p className="relative z-10 mt-3 max-h-0 overflow-hidden font-body text-sm leading-relaxed text-white/80 transition-all duration-300 group-hover:max-h-40">
-                {product.description}
-              </p>
-
-              {product.available && product.href !== "#" && (
-                <Link
-                  href={product.href}
-                  className="absolute inset-0 z-20"
-                  aria-label={`Learn more about ${product.name}`}
-                />
-              )}
-            </div>
+              product={product}
+              isSoftware={activeTab === "software"}
+            />
           ))}
         </div>
       </ScrollReveal>
     </SectionWrapper>
+  );
+}
+
+function EcosystemCard({
+  product,
+  isSoftware,
+}: {
+  product: (typeof HARDWARE_PRODUCTS)[number];
+  isSoftware: boolean;
+}) {
+  const { wrapperRef, contentRef, handleMouseMove, handleMouseLeave } =
+    useTilt();
+
+  return (
+    <div
+      ref={wrapperRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className={`${isSoftware ? "w-full md:w-[600px]" : "w-full md:flex-1"}`}
+      style={{ perspective: "2000px" }}
+    >
+      <div
+        ref={contentRef}
+        className="group relative flex h-[340px] flex-col overflow-hidden rounded-3xl bg-cover bg-center p-6 will-change-transform"
+        style={{ backgroundImage: `url(${product.image})` }}
+      >
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/40" />
+
+        {/* Title with hover animation */}
+        <div className="relative z-10 flex items-center gap-2 transition-transform duration-200 ease-out group-hover:translate-x-4 group-hover:scale-[1.2] origin-left">
+          <h3 className="font-ui text-2xl font-semibold text-white">
+            {product.name}
+          </h3>
+          {product.available && (
+            <svg
+              viewBox="0 0 15 15"
+              className="h-4 w-4 text-white"
+              fill="currentColor"
+            >
+              <path d="M9.95 7.5a.45.45 0 0 1-.132.319l-3 3a.45.45 0 0 1-.636-.637L8.863 7.5L6.182 4.82l-.058-.07a.451.451 0 0 1 .624-.625l.07.058l3 3a.45.45 0 0 1 .132.318" />
+            </svg>
+          )}
+        </div>
+
+        {product.badge && (
+          <span className="relative z-10 mt-1 inline-block w-fit rounded-full bg-white/20 px-3 py-0.5 text-xs font-medium text-white/80">
+            {product.badge}
+          </span>
+        )}
+
+        <p className="relative z-10 mt-3 font-body text-sm leading-relaxed text-white/80 opacity-0 transition-opacity duration-200 ease-out group-hover:opacity-100 max-w-[540px]">
+          {product.description}
+        </p>
+
+        {product.available && product.href !== "#" && (
+          <Link
+            href={product.href}
+            className="absolute inset-0 z-20"
+            aria-label={`Learn more about ${product.name}`}
+          />
+        )}
+      </div>
+    </div>
   );
 }

@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { m } from "framer-motion";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
+import { TiltCard } from "@/components/shared/tilt-card";
 
 /* -------------------------------------------------------------------------- */
 /*  Data                                                                       */
@@ -99,43 +99,41 @@ export default function DiscoverPage() {
         <div className="grid grid-cols-1 gap-8 md:gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {ARTICLES.map((article, i) => (
             <ScrollReveal key={article.href} delay={0.1 * (i + 1)}>
-              <m.article
-                className="group cursor-pointer"
-                whileHover={{ y: -8 }}
-                transition={{ duration: 0.25, ease: "easeOut" }}
-              >
-                {/* Category Tag */}
-                <div className="mb-4">
-                  <span
-                    className={`inline-block rounded-full px-4 py-1.5 font-ui text-[13px] font-medium leading-[1] text-[#1a1a1a] transition-transform duration-200 group-hover:scale-105 ${CATEGORY_STYLES[article.category] ?? "bg-gray-200/50"}`}
-                  >
-                    {article.category}
-                  </span>
-                </div>
+              <TiltCard maxDeg={7}>
+                <article className="group cursor-pointer transition-transform duration-250 ease-out hover:-translate-y-2">
+                  {/* Category Tag */}
+                  <div className="mb-4">
+                    <span
+                      className={`inline-block rounded-full px-4 py-1.5 font-ui text-[13px] font-medium leading-[1] text-[#1a1a1a] transition-transform duration-200 group-hover:scale-105 ${CATEGORY_STYLES[article.category] ?? "bg-gray-200/50"}`}
+                    >
+                      {article.category}
+                    </span>
+                  </div>
 
-                {/* Image with overlay */}
-                <div className="relative mb-0 aspect-[16/10] w-full overflow-hidden rounded-2xl shadow-lg transition-shadow duration-300 group-hover:shadow-xl">
-                  <Image
-                    src={article.image}
-                    alt={article.title}
-                    width={400}
-                    height={250}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 340px"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                </div>
+                  {/* Image with overlay */}
+                  <div className="relative mb-0 aspect-[16/10] w-full overflow-hidden rounded-2xl shadow-lg transition-shadow duration-300 group-hover:shadow-xl">
+                    <Image
+                      src={article.image}
+                      alt={article.title}
+                      width={400}
+                      height={250}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 340px"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  </div>
 
-                {/* Title */}
-                <h4 className="mt-3 font-body text-[16px] font-semibold leading-[24px] text-[#1a1a1a] transition-colors duration-200 group-hover:text-[#555] md:text-[17px]">
-                  {article.title}
-                </h4>
+                  {/* Title */}
+                  <h4 className="mt-3 font-body text-[16px] font-semibold leading-[24px] text-[#1a1a1a] transition-colors duration-200 group-hover:text-[#555] md:text-[17px]">
+                    {article.title}
+                  </h4>
 
-                {/* Date */}
-                <p className="mt-3 font-body text-[14px] font-normal text-[#999] transition-opacity duration-200 group-hover:opacity-70">
-                  {article.date}
-                </p>
-              </m.article>
+                  {/* Date */}
+                  <p className="mt-3 font-body text-[14px] font-normal text-[#999] transition-opacity duration-200 group-hover:opacity-70">
+                    {article.date}
+                  </p>
+                </article>
+              </TiltCard>
             </ScrollReveal>
           ))}
         </div>

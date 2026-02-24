@@ -177,10 +177,29 @@ function SampleDataSection() {
 
         <ScrollReveal delay={0.1}>
           <p className="mx-auto mt-8 max-w-[720px] text-center font-body text-[16px] leading-[1.7] tracking-[0.01em] text-[#666] md:text-[18px]">
-            MOVIN TRACIN delivers a level of performance that&apos;s hard to find
-            elsewhere. Explore our sample motion data, captured without any
-            post-processing or cleanup.
+            MOVIN TRACIN delivers{" "}
+            <span className="font-semibold text-[#1a1a1a]">
+              a level of performance that&apos;s hard to find elsewhere.
+            </span>{" "}
+            Explore our sample motion data, captured{" "}
+            <span className="font-semibold text-[#1a1a1a]">
+              without any post-processing or cleanup.
+            </span>
           </p>
+        </ScrollReveal>
+
+        {/* BVH Motion Viewer */}
+        <ScrollReveal delay={0.15}>
+          <div className="mx-auto mt-12 max-w-[1080px]">
+            <div className="relative w-full overflow-hidden rounded-[16px]" style={{ height: "600px" }}>
+              <iframe
+                src="https://bvh-viewer-main.vercel.app/"
+                title="BVH Motion Viewer"
+                allow="fullscreen; xr-spatial-tracking; accelerometer; gyroscope; magnetometer"
+                className="h-full w-full border-0"
+              />
+            </div>
+          </div>
         </ScrollReveal>
 
         {/* Locomotion & Dynamic Actions */}
@@ -199,21 +218,17 @@ function SampleDataSection() {
             </p>
           </ScrollReveal>
 
-          {/* Video Placeholder */}
+          {/* YouTube Embed - Locomotion */}
           <ScrollReveal delay={0.15}>
             <div className="mx-auto mt-10 max-w-[800px]">
-              <div className="relative aspect-video w-full overflow-hidden rounded-[16px] bg-[#e8e8e8]">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/80 shadow-lg">
-                    <svg
-                      className="ml-1 h-6 w-6 text-[#666]"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                </div>
+              <div className="relative w-full overflow-hidden rounded-[16px]" style={{ paddingTop: "56.25%" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/wlgI0-EoexQ?rel=0&controls=0&autoplay=1&mute=1&start=0"
+                  title="Locomotion & Dynamic Actions"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 h-full w-full"
+                />
               </div>
             </div>
           </ScrollReveal>
@@ -249,21 +264,17 @@ function SampleDataSection() {
             </p>
           </ScrollReveal>
 
-          {/* Video Placeholder */}
+          {/* YouTube Embed - K-pop */}
           <ScrollReveal delay={0.15}>
             <div className="mx-auto mt-10 max-w-[800px]">
-              <div className="relative aspect-video w-full overflow-hidden rounded-[16px] bg-[#e8e8e8]">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/80 shadow-lg">
-                    <svg
-                      className="ml-1 h-6 w-6 text-[#666]"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                </div>
+              <div className="relative w-full overflow-hidden rounded-[16px]" style={{ paddingTop: "56.25%" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/0nGDJ55SPNM?rel=0&controls=0&autoplay=1&mute=1&start=0"
+                  title="K-pop Dances"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 h-full w-full"
+                />
               </div>
             </div>
           </ScrollReveal>

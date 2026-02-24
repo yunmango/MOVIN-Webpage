@@ -4,6 +4,7 @@ import { TrustedBySection } from "@/components/home/trusted-by-section";
 import { UseCasesSection } from "@/components/home/use-cases-section";
 import { SimulatorSection } from "@/components/home/simulator-section";
 import { PartnersSection } from "@/components/home/partners-section";
+import { CTASection } from "@/components/home/cta-section";
 import { MissionSection } from "@/components/home/mission-section";
 
 const ShowcaseSection = dynamic(
@@ -41,6 +42,7 @@ export default function HomePage() {
       <UseCasesSection />
       <SimulatorSection />
       <PartnersSection />
+      <CTASection />
       <MissionSection />
     </>
   );

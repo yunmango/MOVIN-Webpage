@@ -84,6 +84,13 @@ export const IMAGES = {
   clientMicrosoft: `${CDN_BASE}/697bfbef7e9f6f9c99140311_partner_microsoft%403x-8.png`,
   clientMeta: `${CDN_BASE}/697bfbef7e9f6f9c9914031d_partner_meta%403x-8.png`,
   clientVive: `${CDN_BASE}/697bfbef7e9f6f9c99140317_partner_vive%403x-8.png`,
+  // TRACIN page - new assets
+  tracInKeyedOutMp4: `${CDN_BASE}%2F698d4a9d4c8beeffcee8ec65_Keyed%20out_mp4.mp4`,
+  tracInKeyedOutWebm: `${CDN_BASE}%2F698d4a9d4c8beeffcee8ec65_Keyed%20out_webm.webm`,
+  graphics01: `${CDN_BASE}/698dc8f51606cc9f7b59086f_Graphics01.png`,
+  graphics02: `${CDN_BASE}/698dc8f4875d555d87de1186_Graphics02.png`,
+  graphics03: `${CDN_BASE}/698dc8f46f6bc7d549df0856_Graphics03.png`,
+  tracInExplodedNew: `${CDN_BASE}/698d8f27156292a5a789d701_TRACIN%20Exploded%20View.png`,
   // About page - History images
   historySig25: `${CDN_BASE}/697bfbfd1175ac164a082289_history_sig25%403x.png`,
   historyNewMovin: `${CDN_BASE}/697bfbfd1175ac164a0822a0_history_newmovin%403x.png`,

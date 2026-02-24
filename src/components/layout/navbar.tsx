@@ -82,12 +82,7 @@ export function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <Link
             href={NAV_CTA.demo.href}
-            className={cn(
-              "flex h-10 items-center rounded-lg px-4 font-ui text-[14px] font-medium transition-all duration-200 ease-out",
-              useDarkText
-                ? "text-black/80 hover:bg-black/5 hover:text-black"
-                : "text-white/80 hover:bg-white/10 hover:text-white"
-            )}
+            className="flex h-10 items-center rounded-lg bg-black px-5 font-ui text-[14px] font-medium text-white shadow-sm transition-all duration-200 ease-out hover:bg-gray-800 hover:-translate-y-px hover:shadow-md active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a1a1a]/30 focus-visible:ring-offset-2"
           >
             {NAV_CTA.demo.label}
           </Link>

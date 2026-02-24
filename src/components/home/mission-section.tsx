@@ -3,6 +3,7 @@ import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { VideoBackground } from "@/components/shared/video-background";
 import { VIDEOS } from "@/lib/constants";
+import { cn, BTN_PRIMARY } from "@/lib/utils";
 
 export function MissionSection() {
   return (
@@ -34,7 +35,7 @@ export function MissionSection() {
           </p>
           <Link
             href="/about"
-            className="mt-10 block md:inline-block rounded-lg bg-[rgb(26,26,26)] px-8 py-3 font-ui text-base font-light text-white transition-colors hover:bg-gray-800 tracking-[-0.48px] text-center"
+            className={cn("mt-10 block md:inline-flex rounded-lg bg-[rgb(26,26,26)] px-8 py-3 font-ui text-base font-light text-white tracking-[-0.48px] text-center", BTN_PRIMARY)}
           >
             About Us
           </Link>

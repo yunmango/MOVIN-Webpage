@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { TiltCard } from "@/components/shared/tilt-card";
 import { IMAGES } from "@/lib/constants";
+import { cn, BTN_PRIMARY, BTN_SECONDARY } from "@/lib/utils";
 import { PlansSection } from "@/components/studio/plans-section";
 
 export const metadata: Metadata = {
@@ -65,7 +66,7 @@ function HeroSection() {
             </p>
             <Link
               href="/downloads"
-              className="inline-flex items-center gap-2 rounded-[8px] border border-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-[#1a1a1a] transition-all hover:bg-[#1a1a1a] hover:text-white"
+              className={cn("gap-2 rounded-[8px] border border-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-[#1a1a1a]", BTN_SECONDARY)}
             >
               <Image
                 src={IMAGES.studioFavicon}
@@ -395,7 +396,7 @@ function CTASection() {
           <Link
             href="https://shop.movin3d.com/collections/all"
             target="_blank"
-            className="mt-8 inline-block rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white transition-opacity hover:opacity-80"
+            className={cn("mt-8 rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white", BTN_PRIMARY)}
           >
             Order Now
           </Link>
@@ -409,7 +410,7 @@ function CTASection() {
         <ScrollReveal delay={0.2}>
           <Link
             href="/online-demo"
-            className="mt-4 inline-block rounded-[8px] border border-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-[#1a1a1a] transition-all hover:bg-[#1a1a1a] hover:text-white"
+            className={cn("mt-4 rounded-[8px] border border-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-[#1a1a1a]", BTN_SECONDARY)}
           >
             Get a Free Demo
           </Link>

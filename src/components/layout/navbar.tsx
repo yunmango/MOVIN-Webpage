@@ -22,9 +22,9 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-200 ease-out",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
         scrolled
-          ? "bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm"
+          ? "bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm"
           : "bg-transparent"
       )}
     >
@@ -93,7 +93,7 @@ export function Navbar() {
           </Link>
           <Link
             href={NAV_CTA.purchase.href}
-            className="flex h-10 items-center rounded-lg bg-black px-5 font-ui text-[14px] font-medium text-white shadow-sm transition-all duration-200 ease-out hover:bg-gray-800 hover:shadow-md active:scale-[0.97]"
+            className="flex h-10 items-center rounded-lg bg-black px-5 font-ui text-[14px] font-medium text-white shadow-sm transition-all duration-200 ease-out hover:bg-gray-800 hover:-translate-y-px hover:shadow-md active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a1a1a]/30 focus-visible:ring-offset-2"
           >
             {NAV_CTA.purchase.label}
           </Link>

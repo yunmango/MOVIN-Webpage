@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { TiltCard } from "@/components/shared/tilt-card";
 import { IMAGES, SHOP_URL } from "@/lib/constants";
+import { cn, BTN_PRIMARY } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "MOVIN TRACIN - Real-time Markerless Motion Capture",
@@ -62,7 +63,7 @@ function HeroSection() {
                 href={`${SHOP_URL}/collections/all`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-r-full bg-[#1a1a1a] px-6 py-2.5 font-ui text-[16px] font-light text-white transition-opacity hover:opacity-80"
+                className={cn("rounded-r-full bg-[#1a1a1a] px-6 py-2.5 font-ui text-[16px] font-light text-white", BTN_PRIMARY)}
               >
                 Shop Now
               </Link>
@@ -254,7 +255,7 @@ function StudioCrossSellSection() {
           <div className="mt-8 flex justify-center">
             <Link
               href="/studio"
-              className="inline-block rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white transition-opacity hover:opacity-80"
+              className={cn("rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white", BTN_PRIMARY)}
             >
               Go to Studio
             </Link>
@@ -312,7 +313,7 @@ function CTASection() {
               <div className="mt-10">
                 <Link
                   href="/online-demo"
-                  className="inline-block rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white transition-opacity hover:opacity-80"
+                  className={cn("rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white", BTN_PRIMARY)}
                 >
                   Book a Free Demo
                 </Link>

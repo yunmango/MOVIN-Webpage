@@ -53,7 +53,7 @@ export function Footer() {
                       href={link.href}
                       target={link.external ? "_blank" : undefined}
                       rel={link.external ? "noopener noreferrer" : undefined}
-                      className="font-body text-sm text-[rgb(26,27,31)] transition-colors hover:text-black"
+                      className="link-underline font-body text-sm text-[rgb(26,27,31)] transition-colors hover:text-black"
                     >
                       {link.label}
                     </Link>
@@ -89,7 +89,7 @@ export function Footer() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-black transition-colors hover:text-gray-500"
+                  className="text-black transition-all duration-200 hover:text-gray-500 hover:-translate-y-0.5 hover:scale-110"
                   aria-label={key}
                 >
                   {SOCIAL_ICONS[key]}

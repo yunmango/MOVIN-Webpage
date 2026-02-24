@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { IMAGES, DOWNLOAD_LINKS, SHOP_URL } from "@/lib/constants";
+import { cn, BTN_PRIMARY } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Downloads - MOVIN Studio & Plugins",
@@ -110,7 +111,7 @@ function MovinStudioSection() {
               href={DOWNLOAD_LINKS.movinStudio}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white transition-opacity hover:opacity-80"
+              className={cn("gap-2.5 rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white", BTN_PRIMARY)}
             >
               <Image
                 src={IMAGES.downloadFavicon}
@@ -233,7 +234,7 @@ function SampleDataSection() {
                 href={DOWNLOAD_LINKS.sampleLocomotion}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white transition-opacity hover:opacity-80"
+                className={cn("rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white", BTN_PRIMARY)}
               >
                 Download Sample Data
               </Link>
@@ -280,7 +281,7 @@ function SampleDataSection() {
                 href={DOWNLOAD_LINKS.sampleKpop}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white transition-opacity hover:opacity-80"
+                className={cn("rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white", BTN_PRIMARY)}
               >
                 Download Sample Data
               </Link>
@@ -310,7 +311,7 @@ function CTASection() {
               href={`${SHOP_URL}/collections/all`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white transition-opacity hover:opacity-80"
+              className={cn("rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white", BTN_PRIMARY)}
             >
               Order Now
             </Link>
@@ -332,7 +333,7 @@ function CTASection() {
           <div className="mt-8">
             <Link
               href="/online-demo"
-              className="inline-block rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white transition-opacity hover:opacity-80"
+              className={cn("rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white", BTN_PRIMARY)}
             >
               Get a Free Demo
             </Link>

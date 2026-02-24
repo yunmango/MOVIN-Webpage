@@ -6,6 +6,7 @@ import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import Link from "next/link";
 import { IMAGES } from "@/lib/constants";
 import { useTilt } from "@/hooks/use-tilt";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 
 const HARDWARE_PRODUCTS = [
   {
@@ -74,28 +75,30 @@ export function EcosystemSection() {
       <ScrollReveal delay={0.2}>
         {/* Tabs */}
         <div className="mt-12 flex justify-center">
-          <div className="flex w-full max-w-full md:max-w-[600px] gap-1.5 rounded-3xl bg-white p-1.5 shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
-            <button
-              onClick={() => setActiveTab("hardware")}
-              className={`flex-1 rounded-2xl px-4 py-2.5 md:px-8 md:py-3 font-ui text-sm font-medium transition-colors ${
-                activeTab === "hardware"
-                  ? "bg-gray-100 text-black"
-                  : "text-gray-500 hover:text-black"
-              }`}
-            >
-              Hardware
-            </button>
-            <button
-              onClick={() => setActiveTab("software")}
-              className={`flex-1 rounded-2xl px-4 py-2.5 md:px-8 md:py-3 font-ui text-sm font-medium transition-colors ${
-                activeTab === "software"
-                  ? "bg-gray-100 text-black"
-                  : "text-gray-500 hover:text-black"
-              }`}
-            >
-              Software
-            </button>
-          </div>
+          <LazyMotion features={domAnimation} strict>
+            <div className="flex w-full max-w-full md:max-w-[600px] gap-1.5 rounded-3xl bg-white p-1.5 shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
+              {(["hardware", "software"] as const).map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`relative flex-1 rounded-2xl px-4 py-2.5 md:px-8 md:py-3 font-ui text-sm font-medium transition-colors ${
+                    activeTab === tab
+                      ? "text-black"
+                      : "text-gray-500 hover:text-black"
+                  }`}
+                >
+                  {activeTab === tab && (
+                    <m.div
+                      layoutId="ecosystem-tab"
+                      className="absolute inset-0 rounded-2xl bg-gray-100"
+                      transition={{ type: "spring", bounce: 0.15, duration: 0.5 }}
+                    />
+                  )}
+                  <span className="relative z-10 capitalize">{tab}</span>
+                </button>
+              ))}
+            </div>
+          </LazyMotion>
         </div>
 
         {/* Product Cards */}
@@ -133,7 +136,7 @@ function EcosystemCard({
     >
       <div
         ref={contentRef}
-        className="group relative flex h-[340px] flex-col overflow-hidden rounded-3xl bg-cover bg-center p-6 will-change-transform"
+        className="group relative flex h-[340px] flex-col overflow-hidden rounded-3xl bg-cover bg-center p-6 will-change-transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
         style={{ backgroundImage: `url(${product.image})` }}
       >
         {/* Dark overlay */}

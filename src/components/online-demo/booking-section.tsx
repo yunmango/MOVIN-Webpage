@@ -1,12 +1,28 @@
 "use client";
 
-import { ChevronDown } from "lucide-react";
+import { useState } from "react";
+import { ChevronDown, Check } from "lucide-react";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
+import { LoadingSpinner } from "@/components/shared/loading-spinner";
+import { cn, BTN_PRIMARY } from "@/lib/utils";
 
 const inputClasses =
-  "w-full rounded-[8px] border border-[#e8e8e8] bg-white px-4 py-3 font-body text-[15px] text-[#1a1a1a] outline-none transition-all duration-200 placeholder:text-[#999] focus:border-[#1a1a1a] focus:ring-1 focus:ring-[#1a1a1a]/10";
+  "w-full rounded-[8px] border border-[#e8e8e8] bg-white px-4 py-3 font-body text-[15px] text-[#1a1a1a] outline-none transition-all duration-200 placeholder:text-[#999] focus:border-[#1a1a1a] focus:ring-2 focus:ring-[#1a1a1a]/10 focus:shadow-[0_0_0_3px_rgba(26,26,26,0.06)]";
 
 export function BookingSection() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Simulate submission
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+  };
+
   return (
     <section className="bg-[#fafafa] px-6 py-20 md:py-32">
       <div className="mx-auto max-w-[1080px]">
@@ -23,7 +39,7 @@ export function BookingSection() {
           </div>
         </ScrollReveal>
 
-        <form action="#" className="space-y-8 md:space-y-10">
+        <form onSubmit={handleSubmit} className="space-y-8 md:space-y-10">
           {/* Honeypot */}
           <div className="hidden" aria-hidden="true">
             <input type="text" name="honeypot" tabIndex={-1} autoComplete="off" />
@@ -190,13 +206,47 @@ export function BookingSection() {
               </p>
               <button
                 type="submit"
-                className="w-full shrink-0 rounded-[8px] bg-[#1a1a1a] px-10 py-3 font-ui text-[14px] font-medium text-white transition-all active:scale-[0.98] hover:opacity-80 md:w-auto"
+                disabled={isSubmitting || isSubmitted}
+                className={cn(
+                  "w-full shrink-0 rounded-[8px] bg-[#1a1a1a] px-10 py-3 font-ui text-[14px] font-medium text-white md:w-auto disabled:opacity-70",
+                  BTN_PRIMARY
+                )}
               >
-                Submit
+                {isSubmitting ? (
+                  <span className="flex items-center gap-2">
+                    <LoadingSpinner className="h-4 w-4" />
+                    Submitting...
+                  </span>
+                ) : isSubmitted ? (
+                  <span className="flex items-center gap-2">
+                    <Check className="h-4 w-4" />
+                    Submitted!
+                  </span>
+                ) : (
+                  "Submit"
+                )}
               </button>
             </div>
           </ScrollReveal>
         </form>
+
+        {isSubmitted && (
+          <LazyMotion features={domAnimation} strict>
+            <m.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-8 rounded-[12px] bg-[#e8f5e9] px-6 py-4 text-center"
+            >
+              <p className="font-ui text-[15px] font-medium text-[#2e7d32]">
+                Thank you! Your demo request has been submitted successfully.
+              </p>
+              <p className="mt-1 font-body text-[13px] text-[#388e3c]">
+                We&apos;ll contact you shortly to schedule your session.
+              </p>
+            </m.div>
+          </LazyMotion>
+        )}
       </div>
     </section>
   );

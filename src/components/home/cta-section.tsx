@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { IMAGES } from "@/lib/constants";
+import { cn, BTN_PRIMARY } from "@/lib/utils";
 
 export function CTASection() {
   return (
@@ -36,7 +37,7 @@ export function CTASection() {
               <div className="mt-10">
                 <Link
                   href="/online-demo"
-                  className="inline-block rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white transition-opacity hover:opacity-80"
+                  className={cn("rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white", BTN_PRIMARY)}
                 >
                   Book a Free Demo
                 </Link>

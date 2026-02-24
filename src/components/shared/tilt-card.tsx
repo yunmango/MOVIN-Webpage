@@ -8,6 +8,7 @@ interface TiltCardProps {
   className?: string;
   maxDeg?: number;
   perspective?: number;
+  hoverElevation?: boolean;
 }
 
 export function TiltCard({
@@ -15,6 +16,7 @@ export function TiltCard({
   className,
   maxDeg = 9,
   perspective = 2000,
+  hoverElevation = true,
 }: TiltCardProps) {
   const { wrapperRef, contentRef, handleMouseMove, handleMouseLeave } =
     useTilt(maxDeg);
@@ -26,7 +28,14 @@ export function TiltCard({
       onMouseLeave={handleMouseLeave}
       style={{ perspective: `${perspective}px` }}
     >
-      <div ref={contentRef} className={cn("will-change-transform", className)}>
+      <div
+        ref={contentRef}
+        className={cn(
+          "will-change-transform",
+          hoverElevation && "transition-all duration-300 hover:shadow-lg hover:-translate-y-1",
+          className
+        )}
+      >
         {children}
       </div>
     </div>

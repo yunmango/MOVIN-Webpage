@@ -6,7 +6,7 @@ import { Minus, Plus, Check, Truck, Shield } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { PURCHASE_PRICE, ADDONS, HIGHLIGHTS, SHIPPING_INFO, WARRANTY_INFO } from "@/data/purchase";
 import { SHOP_URL } from "@/lib/constants";
-import { cn } from "@/lib/utils";
+import { cn, BTN_PRIMARY } from "@/lib/utils";
 import {
   Accordion,
   AccordionContent,
@@ -140,7 +140,7 @@ export function PurchasePanel() {
                     <div className="mt-2 flex items-center gap-3">
                       <button
                         onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                        className="flex h-10 w-10 items-center justify-center rounded-[8px] border border-[#e5e5e5] text-[#666] transition-colors hover:bg-[#f5f5f5]"
+                        className="flex h-10 w-10 items-center justify-center rounded-[8px] border border-[#e5e5e5] text-[#666] transition-all hover:bg-[#f5f5f5] active:scale-90"
                         aria-label="Decrease quantity"
                       >
                         <Minus className="h-4 w-4" />
@@ -150,7 +150,7 @@ export function PurchasePanel() {
                       </span>
                       <button
                         onClick={() => setQuantity((q) => Math.min(5, q + 1))}
-                        className="flex h-10 w-10 items-center justify-center rounded-[8px] border border-[#e5e5e5] text-[#666] transition-colors hover:bg-[#f5f5f5]"
+                        className="flex h-10 w-10 items-center justify-center rounded-[8px] border border-[#e5e5e5] text-[#666] transition-all hover:bg-[#f5f5f5] active:scale-90"
                         aria-label="Increase quantity"
                       >
                         <Plus className="h-4 w-4" />
@@ -212,7 +212,7 @@ export function PurchasePanel() {
                       href={`${SHOP_URL}/products/movin-tracin`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-4 flex h-[52px] w-full items-center justify-center rounded-[12px] bg-[#1a1a1a] font-ui text-[16px] font-medium text-white transition-opacity hover:opacity-85"
+                      className={cn("mt-4 flex h-[52px] w-full rounded-[12px] bg-[#1a1a1a] font-ui text-[16px] font-medium text-white", BTN_PRIMARY)}
                     >
                       Buy Now
                     </Link>

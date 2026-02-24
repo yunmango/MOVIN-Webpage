@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useScrollPosition } from "@/hooks/use-scroll-position";
 import { PURCHASE_PRICE } from "@/data/purchase";
 import { SHOP_URL } from "@/lib/constants";
-import { cn } from "@/lib/utils";
+import { cn, BTN_PRIMARY } from "@/lib/utils";
 
 export function MobilePurchaseBar() {
   const scrolled = useScrollPosition(400);
@@ -34,7 +34,7 @@ export function MobilePurchaseBar() {
           href={`${SHOP_URL}/products/movin-tracin`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-[44px] items-center rounded-[10px] bg-[#1a1a1a] px-7 font-ui text-[15px] font-medium text-white transition-opacity hover:opacity-85"
+          className={cn("flex h-[44px] items-center rounded-[10px] bg-[#1a1a1a] px-7 font-ui text-[15px] font-medium text-white", BTN_PRIMARY)}
         >
           Buy Now
         </Link>

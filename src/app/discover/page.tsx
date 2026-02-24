@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-
-export const metadata: Metadata = {
-  title: "Discover - MOVIN",
-  description:
-    "Keep track of our remarkable journey of progress.",
-};
+import { ScrollReveal } from "@/components/shared/scroll-reveal";
 
 /* -------------------------------------------------------------------------- */
 /*  Data                                                                       */
@@ -17,17 +13,21 @@ const DISCOVER_CDN =
 
 interface Article {
   category: string;
-  categoryColor: string;
   title: string;
   date: string;
   image: string;
   href: string;
 }
 
+const CATEGORY_STYLES: Record<string, string> = {
+  Announcements: "bg-cyan-200/50",
+  News: "bg-purple-300/50",
+  Insights: "bg-lime-200/50",
+};
+
 const ARTICLES: Article[] = [
   {
     category: "Announcements",
-    categoryColor: "hsla(184.5, 100%, 68.63%, 0.50)",
     title: "MOVIN TRACIN Makes Its Debut at GDC 2024",
     date: "March 20, 2024",
     image: `${DISCOVER_CDN}/698acecdbe7db696ff70aec2_MOVIN%20TRACIN%20Makes%20Its%20Debut%20at%20GDC%202024.png`,
@@ -35,7 +35,6 @@ const ARTICLES: Article[] = [
   },
   {
     category: "News",
-    categoryColor: "hsla(280.81, 91.49%, 63.14%, 0.50)",
     title:
       "MOVIN and CUZ Launch Real-Time Motion Capture Photo Zone at Lotte World Adventure",
     date: "March 5, 2024",
@@ -44,7 +43,6 @@ const ARTICLES: Article[] = [
   },
   {
     category: "News",
-    categoryColor: "hsla(280.81, 91.49%, 63.14%, 0.50)",
     title:
       "Real-Time Markerless Motion Capture Startup MOVIN Secures Seed Funding from NAVER D2SF, Bluepoint Partners, and Krew Capital",
     date: "December 13, 2023",
@@ -53,7 +51,6 @@ const ARTICLES: Article[] = [
   },
   {
     category: "Insights",
-    categoryColor: "hsla(75.08, 100%, 63.33%, 0.50)",
     title:
       "Research Spotlight: MOVIN, Real-time Motion Capture with a Single LiDAR",
     date: "September 17, 2023",
@@ -68,65 +65,72 @@ const ARTICLES: Article[] = [
 
 export default function DiscoverPage() {
   return (
-    <section className="bg-white pt-24 pb-20">
+    <section className="bg-white pb-20 pt-24">
       {/* Hero / Header */}
-      <div className="mx-auto max-w-[1100px] px-5 pt-12 pb-[144px] text-center md:pb-[144px]">
-        <h1 className="font-ui text-[44px] font-bold leading-[1] text-black">
-          Discover
-        </h1>
-        <p className="mt-5 font-ui text-[16px] font-normal leading-[1] text-[#333] md:text-[20px]">
-          Keep track of our remarkable journey of progress.
-        </p>
-        <p className="mt-3 font-ui text-[16px] font-normal leading-[1.25] text-[#333]">
-          Please click the{" "}
-          <Link
-            href="https://discover.movin3d.com/kr"
-            target="_blank"
-            className="underline"
-          >
-            link
-          </Link>{" "}
-          for the Korean version.
-        </p>
+      <div className="mx-auto max-w-[1200px] px-6 pb-16 pt-12 text-center md:pb-24">
+        <ScrollReveal>
+          <h1 className="font-heading text-[56px] font-bold leading-[0.95] tracking-[-0.02em] text-[#1a1a1a] md:text-[72px]">
+            Discover
+          </h1>
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
+          <p className="mt-5 font-body text-base leading-[1.5] text-[#666] md:text-xl">
+            Keep track of our remarkable journey of progress.
+          </p>
+        </ScrollReveal>
+        <ScrollReveal delay={0.15}>
+          <p className="mt-3 font-body text-base leading-[1.5] text-[#666]">
+            Please click the{" "}
+            <Link
+              href="https://discover.movin3d.com/kr"
+              target="_blank"
+              className="underline transition-opacity hover:opacity-70"
+            >
+              link
+            </Link>{" "}
+            for the Korean version.
+          </p>
+        </ScrollReveal>
       </div>
 
       {/* Articles Grid */}
-      <div className="mx-auto max-w-[1100px] px-1 md:px-0">
-        <div className="grid grid-cols-1 gap-y-10 md:grid-cols-3">
-          {ARTICLES.map((article) => (
-            <article key={article.href} className="px-5">
-              {/* Category Tag */}
-              <div className="mb-3">
-                <span
-                  className="inline-block rounded-[5px] px-[15px] py-[9px] font-ui text-[14px] font-normal leading-[12px] text-black md:text-[16px]"
-                  style={{ backgroundColor: article.categoryColor }}
-                >
-                  {article.category}
-                </span>
-              </div>
+      <div className="mx-auto max-w-[1200px] px-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {ARTICLES.map((article, i) => (
+            <ScrollReveal key={article.href} delay={0.05 * (i + 1)}>
+              <article className="group cursor-pointer">
+                {/* Category Tag */}
+                <div className="mb-3">
+                  <span
+                    className={`inline-block rounded-full px-4 py-1.5 font-ui text-[13px] font-medium leading-[1] text-[#1a1a1a] ${CATEGORY_STYLES[article.category] ?? "bg-gray-200/50"}`}
+                  >
+                    {article.category}
+                  </span>
+                </div>
 
-              {/* Image */}
-              <div className="relative mb-0 w-full overflow-hidden">
-                <Image
-                  src={article.image}
-                  alt={article.title}
-                  width={400}
-                  height={250}
-                  className="h-auto w-full object-cover"
-                  sizes="(max-width: 768px) 100vw, 330px"
-                />
-              </div>
+                {/* Image */}
+                <div className="relative mb-0 w-full overflow-hidden rounded-2xl">
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    width={400}
+                    height={250}
+                    className="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 280px"
+                  />
+                </div>
 
-              {/* Title */}
-              <h4 className="mt-[10px] font-ui text-[16px] font-medium leading-[24px] text-[#1a1a1a] md:text-[18px]">
-                {article.title}
-              </h4>
+                {/* Title */}
+                <h4 className="mt-3 font-body text-[16px] font-semibold leading-[24px] text-[#1a1a1a] transition-colors group-hover:text-[#333] md:text-[17px]">
+                  {article.title}
+                </h4>
 
-              {/* Date */}
-              <p className="mt-4 font-ui text-[14px] font-normal text-[#1a1a1a]">
-                {article.date}
-              </p>
-            </article>
+                {/* Date */}
+                <p className="mt-3 font-body text-[14px] font-normal text-[#999]">
+                  {article.date}
+                </p>
+              </article>
+            </ScrollReveal>
           ))}
         </div>
       </div>

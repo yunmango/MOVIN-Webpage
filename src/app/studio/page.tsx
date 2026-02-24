@@ -18,9 +18,16 @@ function HeroSection() {
       <div className="mx-auto max-w-[1080px] px-6">
         {/* Title */}
         <ScrollReveal>
-          <h1 className="text-center font-body text-[32px] font-normal uppercase tracking-[1.6px] text-[#1a1a1a]">
+          <h1 className="text-center font-heading text-[56px] font-bold leading-[0.95] tracking-[-0.02em] text-[#1a1a1a] md:text-[72px] lg:text-[88px]">
             MOVIN STUDIO
           </h1>
+        </ScrollReveal>
+
+        {/* Subtitle */}
+        <ScrollReveal delay={0.05}>
+          <p className="mx-auto mt-4 max-w-[500px] text-center font-body text-base text-[#666] md:text-xl">
+            Control, visualize, and export motion with precision.
+          </p>
         </ScrollReveal>
 
         {/* Hero Image */}
@@ -39,10 +46,10 @@ function HeroSection() {
 
         {/* Description */}
         <ScrollReveal delay={0.2}>
-          <p className="mx-auto mt-10 max-w-[600px] text-center font-body text-[20px] leading-[28px] tracking-[0.4px] text-[#333]">
+          <p className="mx-auto mt-10 max-w-[600px] text-center font-body text-base leading-[1.7] text-[#666] md:text-xl">
             MOVIN Studio is the dedicated control and visualization application
             built for MOVIN TRACIN.{" "}
-            <span className="font-bold text-[#1a1a1a]">
+            <span className="font-semibold text-[#1a1a1a]">
               A smooth and intuitive interface
             </span>{" "}
             keeps you focused on the quality of the motion.
@@ -52,12 +59,12 @@ function HeroSection() {
         {/* Download CTA */}
         <ScrollReveal delay={0.3}>
           <div className="mt-10 flex flex-col items-center gap-4">
-            <p className="font-body text-sm tracking-wide text-gray-400">
+            <p className="font-body text-sm tracking-wide text-[#999]">
               Currently available for Windows
             </p>
             <Link
               href="/downloads"
-              className="inline-flex items-center gap-2 rounded-full border border-[#1a1a1a] px-6 py-3 font-body text-sm font-medium text-[#1a1a1a] transition-colors hover:bg-[#1a1a1a] hover:text-white"
+              className="inline-flex items-center gap-2 rounded-[8px] border border-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-[#1a1a1a] transition-all hover:bg-[#1a1a1a] hover:text-white"
             >
               <Image
                 src={IMAGES.studioFavicon}
@@ -89,8 +96,8 @@ function RetargetingSection() {
           />
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <p className="mt-10 max-w-[600px] font-body text-[20px] leading-[28px] tracking-[0.4px] text-[#333]">
-            <span className="font-bold text-[#1a1a1a]">
+          <p className="mt-10 max-w-[600px] font-body text-base leading-[1.7] text-[#666] md:text-xl">
+            <span className="font-semibold text-[#1a1a1a]">
               Retarget characters
             </span>{" "}
             of any shape or proportion to eliminate unnatural occlusions. Using
@@ -116,10 +123,10 @@ const PIPELINE_LOGOS = [
 
 function PipelineSection() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-[#fafafa] py-20 md:py-28">
       <div className="mx-auto max-w-[1080px] px-6">
         <ScrollReveal>
-          <h2 className="font-body text-[32px] font-normal tracking-[0.32px] text-[#1a1a1a]">
+          <h2 className="font-ui text-[24px] font-normal tracking-[-0.8px] text-[#1a1a1a] md:text-[40px]">
             Ready for Every Pipeline
           </h2>
         </ScrollReveal>
@@ -128,7 +135,7 @@ function PipelineSection() {
           {/* Left: Description & Logos */}
           <div className="flex-1">
             <ScrollReveal delay={0.1}>
-              <p className="font-body text-[20px] leading-[28px] tracking-[0.4px] text-[#333]">
+              <p className="font-body text-base leading-[1.7] text-[#666] md:text-xl">
                 MOVIN Studio connects seamlessly with major platforms, helping
                 you adapt to any production environment. Captured motion can also
                 be exported in various formats, ensuring compatibility across
@@ -144,7 +151,7 @@ function PipelineSection() {
                       alt={logo.alt}
                       width={logo.width}
                       height={60}
-                      className="h-auto max-h-[50px] w-auto max-w-full object-contain brightness-0"
+                      className="h-auto max-h-[60px] w-auto max-w-full object-contain brightness-0 opacity-60 transition-opacity hover:opacity-100"
                     />
                   </div>
                 ))}
@@ -178,15 +185,17 @@ function FeaturesSection() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {/* Capture Area */}
           <ScrollReveal>
-            <div>
-              <Image
-                src={IMAGES.studioArea}
-                alt="Mocap area diagram"
-                width={581}
-                height={500}
-                className="w-full rounded-2xl"
-              />
-              <p className="mt-6 font-body text-[16px] leading-[24px] text-[#333]">
+            <div className="group overflow-hidden rounded-3xl bg-[#fafafa] p-6">
+              <div className="overflow-hidden rounded-2xl">
+                <Image
+                  src={IMAGES.studioArea}
+                  alt="Mocap area diagram"
+                  width={581}
+                  height={500}
+                  className="w-full transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <p className="mt-6 font-body text-base leading-[1.7] text-[#666]">
                 From a cozy 1m x 1m home setup to a full 5m x 5m studio space,
                 MOVIN TRACIN adapts to your environment — now with 2.5x more
                 capture area than before.
@@ -196,15 +205,17 @@ function FeaturesSection() {
 
           {/* Glove Integration */}
           <ScrollReveal delay={0.1}>
-            <div>
-              <Image
-                src={IMAGES.studioGlove}
-                alt="Hand capture with gloves"
-                width={581}
-                height={500}
-                className="w-full rounded-2xl"
-              />
-              <p className="mt-6 font-body text-[16px] leading-[24px] text-[#333]">
+            <div className="group overflow-hidden rounded-3xl bg-[#fafafa] p-6">
+              <div className="overflow-hidden rounded-2xl">
+                <Image
+                  src={IMAGES.studioGlove}
+                  alt="Hand capture with gloves"
+                  width={581}
+                  height={500}
+                  className="w-full transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <p className="mt-6 font-body text-base leading-[1.7] text-[#666]">
                 Integrate third-party gloves for reliable hand capture. The
                 system&apos;s subtle engineering blends glove input into
                 full-body motion, maintaining a natural articulation even in
@@ -221,129 +232,133 @@ function FeaturesSection() {
 /* ─────────────────── Technical Specification Section ─────────────────── */
 function TechnicalSpecSection() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-[#fafafa] py-20 md:py-28">
       <div className="mx-auto max-w-[1080px] px-6">
         <ScrollReveal>
-          <div className="rounded-3xl bg-[#e8e8e8] p-8 md:p-12">
-            <h2 className="text-center font-body text-[32px] font-normal tracking-[0.32px] text-[#1a1a1a]">
-              Technical Specification
-            </h2>
+          <h2 className="text-center font-heading text-[40px] font-bold tracking-[-0.02em] text-[#1a1a1a] md:text-[56px]">
+            Technical Specification
+          </h2>
+        </ScrollReveal>
 
-            <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
-              {/* Materials */}
-              <div className="rounded-2xl bg-white p-6">
-                <p className="text-center font-body text-sm text-gray-500">
-                  Materials
-                </p>
-                <p className="mt-4 text-center font-body text-lg font-bold text-[#1a1a1a]">
-                  Anodized
-                  <br />
-                  Aluminum
-                </p>
+        <ScrollReveal delay={0.1}>
+          <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
+            {/* Materials */}
+            <div className="rounded-2xl border border-[#e8e8e8] bg-white p-6 transition-shadow hover:shadow-md">
+              <p className="text-center font-body text-sm text-gray-500">
+                Materials
+              </p>
+              <p className="mt-4 text-center font-body text-lg font-bold text-[#1a1a1a]">
+                Anodized
+                <br />
+                Aluminum
+              </p>
+            </div>
+
+            {/* MoCap Range */}
+            <div className="rounded-2xl border border-[#e8e8e8] bg-white p-6 transition-shadow hover:shadow-md">
+              <p className="text-center font-body text-sm text-gray-500">
+                MoCap Range
+              </p>
+              <p className="mt-4 text-center font-body text-lg font-bold text-[#1a1a1a]">
+                1m x 1m
+                <br />
+                <span className="text-sm font-normal text-gray-400">to</span>
+                <br />
+                5m x 5m
+              </p>
+            </div>
+
+            {/* MoCap Spec */}
+            <div className="rounded-2xl border border-[#e8e8e8] bg-white p-6 transition-shadow hover:shadow-md">
+              <p className="text-center font-body text-sm text-gray-500">
+                MoCap Spec
+              </p>
+              <div className="mt-4 space-y-2">
+                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                  <span>Body</span>
+                  <span>22 joints</span>
+                </div>
+                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                  <span>Hands</span>
+                  <span>30 joints</span>
+                </div>
+                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                  <span>Latency</span>
+                  <span>&lt; 0.1sec</span>
+                </div>
               </div>
+            </div>
+          </div>
+        </ScrollReveal>
 
-              {/* MoCap Range */}
-              <div className="rounded-2xl bg-white p-6">
-                <p className="text-center font-body text-sm text-gray-500">
-                  MoCap Range
-                </p>
-                <p className="mt-4 text-center font-body text-lg font-bold text-[#1a1a1a]">
-                  1m x 1m
-                  <br />
-                  <span className="text-sm font-normal text-gray-400">to</span>
-                  <br />
-                  5m x 5m
-                </p>
-              </div>
-
-              {/* MoCap Spec */}
-              <div className="rounded-2xl bg-white p-6">
-                <p className="text-center font-body text-sm text-gray-500">
-                  MoCap Spec
-                </p>
-                <div className="mt-4 space-y-2">
-                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                    <span>Body</span>
-                    <span>22 joints</span>
-                  </div>
-                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                    <span>Hands</span>
-                    <span>30 joints</span>
-                  </div>
-                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                    <span>Latency</span>
-                    <span>&lt; 0.1sec</span>
-                  </div>
+        <ScrollReveal delay={0.15}>
+          <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+            {/* Size & Weight */}
+            <div className="rounded-2xl border border-[#e8e8e8] bg-white p-6 transition-shadow hover:shadow-md">
+              <p className="text-center font-body text-sm text-gray-500">
+                Size & Weight
+              </p>
+              <div className="mt-4 space-y-2">
+                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                  <span>Width</span>
+                  <span>87mm</span>
+                </div>
+                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                  <span>Depth</span>
+                  <span>225mm</span>
+                </div>
+                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                  <span>Height</span>
+                  <span>165mm</span>
+                </div>
+                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                  <span>Weight</span>
+                  <span>&lt; 3kg</span>
                 </div>
               </div>
             </div>
 
-            <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
-              {/* Size & Weight */}
-              <div className="rounded-2xl bg-white p-6">
-                <p className="text-center font-body text-sm text-gray-500">
-                  Size & Weight
-                </p>
-                <div className="mt-4 space-y-2">
-                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                    <span>Width</span>
-                    <span>87mm</span>
-                  </div>
-                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                    <span>Depth</span>
-                    <span>225mm</span>
-                  </div>
-                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                    <span>Height</span>
-                    <span>165mm</span>
-                  </div>
-                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                    <span>Weight</span>
-                    <span>&lt; 3kg</span>
-                  </div>
+            {/* System Requirements */}
+            <div className="rounded-2xl border border-[#e8e8e8] bg-white p-6 transition-shadow hover:shadow-md">
+              <p className="text-center font-body text-sm text-gray-500">
+                System Requirements
+              </p>
+              <div className="mt-4 space-y-2">
+                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                  <span>O.S.</span>
+                  <span>Only Windows Provided</span>
                 </div>
-              </div>
-
-              {/* System Requirements */}
-              <div className="rounded-2xl bg-white p-6">
-                <p className="text-center font-body text-sm text-gray-500">
-                  System Requirements
-                </p>
-                <div className="mt-4 space-y-2">
-                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                    <span>O.S.</span>
-                    <span>Only Windows Provided</span>
-                  </div>
-                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                    <span>CPU</span>
-                    <span>3.0+ GHz i7</span>
-                  </div>
-                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                    <span>RAM</span>
-                    <span>&gt; 16GB</span>
-                  </div>
-                  <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
-                    <span>VGA</span>
-                    <span className="text-right">
-                      Nvidia RTX 3060 /
-                      <br />
-                      AMD 6600xt
-                    </span>
-                  </div>
+                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                  <span>CPU</span>
+                  <span>3.0+ GHz i7</span>
+                </div>
+                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                  <span>RAM</span>
+                  <span>&gt; 16GB</span>
+                </div>
+                <div className="flex justify-between font-body text-base font-bold text-[#1a1a1a]">
+                  <span>VGA</span>
+                  <span className="text-right">
+                    Nvidia RTX 3060 /
+                    <br />
+                    AMD 6600xt
+                  </span>
                 </div>
               </div>
             </div>
+          </div>
+        </ScrollReveal>
 
-            {/* Exploded view image */}
-            <div className="mt-8">
-              <Image
-                src={IMAGES.tracInExploded}
-                alt="TRACIN exploded view"
-                width={1440}
-                height={600}
-                className="w-full"
-              />
-            </div>
+        {/* Exploded view image */}
+        <ScrollReveal delay={0.2}>
+          <div className="mt-8">
+            <Image
+              src={IMAGES.tracInExploded}
+              alt="TRACIN exploded view"
+              width={1440}
+              height={600}
+              className="w-full"
+            />
           </div>
         </ScrollReveal>
       </div>
@@ -357,7 +372,7 @@ function CTASection() {
     <section className="bg-white py-20 md:py-28">
       <div className="mx-auto max-w-[1080px] px-6 text-center">
         <ScrollReveal>
-          <h2 className="font-body text-[40px] font-bold text-[#1a1a1a] md:text-[48px]">
+          <h2 className="font-ui text-[24px] font-normal tracking-[-0.8px] text-[#1a1a1a] md:text-[40px]">
             Ready to Get MOVIN?
           </h2>
         </ScrollReveal>
@@ -365,13 +380,13 @@ function CTASection() {
           <Link
             href="https://shop.movin3d.com/collections/all"
             target="_blank"
-            className="mt-8 inline-block rounded-full bg-[#1a1a1a] px-10 py-4 font-body text-base font-medium text-white transition-colors hover:bg-black"
+            className="mt-8 inline-block rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white transition-opacity hover:opacity-80"
           >
             Order Now
           </Link>
         </ScrollReveal>
         <ScrollReveal delay={0.15}>
-          <p className="mt-8 font-body text-base text-gray-500">
+          <p className="mt-8 font-body text-base text-[#666] md:text-xl">
             Ask for a Free Demo Session, or Consult With an Expert for Your Use
             Case.
           </p>
@@ -379,7 +394,7 @@ function CTASection() {
         <ScrollReveal delay={0.2}>
           <Link
             href="/online-demo"
-            className="mt-4 inline-block rounded-full border border-[#1a1a1a] px-8 py-3 font-body text-sm font-medium text-[#1a1a1a] transition-colors hover:bg-[#1a1a1a] hover:text-white"
+            className="mt-4 inline-block rounded-[8px] border border-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-[#1a1a1a] transition-all hover:bg-[#1a1a1a] hover:text-white"
           >
             Get a Free Demo
           </Link>
@@ -400,23 +415,23 @@ function CTASection() {
 /* ─────────────────── Disclaimer Section ─────────────────── */
 function DisclaimerSection() {
   return (
-    <section className="bg-white py-12">
+    <section className="bg-[#fafafa] py-12">
       <div className="mx-auto max-w-[1080px] px-6">
-        <p className="font-body text-[10px] leading-[16px] text-gray-400">
+        <p className="font-body text-[11px] leading-[1.8] text-gray-400">
           Products are shipped using reliable third-party logistics providers.
           While we strive to provide accurate shipping timelines, all delivery
           dates are estimates and may be subject to delay due to unforeseen
           circumstances. We cannot be held liable for shipping delays outside our
           control, including customs clearance or courier disruptions.
         </p>
-        <p className="mt-3 font-body text-[10px] leading-[16px] text-gray-400">
+        <p className="mt-3 font-body text-[11px] leading-[1.8] text-gray-400">
           We aim for customer satisfaction and may honor return or refund
           requests in accordance with applicable law and our internal policies.
           Unless otherwise required by law, all sales are final. For defective
           items covered under warranty, a return or exchange may be offered
           subject to verification and within the warranty period.
         </p>
-        <p className="mt-3 font-body text-[10px] leading-[16px] text-gray-400">
+        <p className="mt-3 font-body text-[11px] leading-[1.8] text-gray-400">
           We Use the Hesai JT128, 905nm LiDAR, which operates at a 905nm
           wavelength and is intended for short-range detection up to 30 meters.
           This wavelength is widely used in service robots, vacuums, and
@@ -428,7 +443,7 @@ function DisclaimerSection() {
           electromagnetic compatibility (EMC) and safety standards for consumer
           and industrial environments.
         </p>
-        <p className="mt-3 font-body text-[10px] leading-[16px] text-gray-400">
+        <p className="mt-3 font-body text-[11px] leading-[1.8] text-gray-400">
           MOVIN DOES NOT STORE, TRANSMIT, OR UPLOAD ANY VIDEO OR SENSOR DATA. All
           processing occurs locally on the user&apos;s PC, and the generated
           skeletal data remains entirely under the user&apos;s control.

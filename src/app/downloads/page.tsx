@@ -15,18 +15,46 @@ function HeroSection() {
   return (
     <section className="flex flex-col items-center justify-center pb-8 pt-40 md:pt-48">
       <ScrollReveal>
-        <h1 className="text-center font-heading text-[64px] font-bold uppercase leading-[0.95] tracking-[-0.02em] text-[#1a1a1a] md:text-[96px] lg:text-[120px]">
-          DOWNLOADS
+        <h1 className="text-center font-heading text-[56px] font-bold leading-[0.95] tracking-[-0.02em] text-[#1a1a1a] md:text-[72px] lg:text-[88px]">
+          Downloads
         </h1>
       </ScrollReveal>
       <ScrollReveal delay={0.1}>
-        <p className="mt-6 text-center font-body text-[14px] uppercase leading-[1.6] tracking-[0.15em] text-[#999]">
-          FIND ALL THE ESSENTIAL TOOLS AND RESOURCES YOU NEED TO START.
+        <p className="mt-6 text-center font-body text-base leading-[1.6] text-[#666] md:text-xl">
+          Find all the essential tools and resources you need to start.
         </p>
       </ScrollReveal>
     </section>
   );
 }
+
+/* ─── Plugin Links Data ─── */
+const PLUGINS = [
+  {
+    name: "Unity Plugin",
+    href: DOWNLOAD_LINKS.unityPlugin,
+    icon: IMAGES.pluginUnity,
+    iconAlt: "Unity",
+  },
+  {
+    name: "Unreal Engine Plugin",
+    href: DOWNLOAD_LINKS.unrealPlugin,
+    icon: IMAGES.pluginUnreal,
+    iconAlt: "Unreal Engine",
+  },
+  {
+    name: "Blender Plugin",
+    href: DOWNLOAD_LINKS.blenderPlugin,
+    icon: null,
+    iconAlt: "",
+  },
+  {
+    name: "TouchDesigner Sample",
+    href: DOWNLOAD_LINKS.touchDesigner,
+    icon: null,
+    iconAlt: "",
+  },
+];
 
 /* ─── MOVIN Studio Section ─── */
 function MovinStudioSection() {
@@ -35,7 +63,7 @@ function MovinStudioSection() {
       <div className="mx-auto max-w-[1200px]">
         {/* Title */}
         <ScrollReveal>
-          <h2 className="text-center font-heading text-[48px] font-bold uppercase leading-[1] tracking-[-0.02em] text-[#1a1a1a] md:text-[64px] lg:text-[80px]">
+          <h2 className="text-center font-heading text-[48px] font-bold leading-[1] tracking-[-0.02em] text-[#1a1a1a] md:text-[64px] lg:text-[80px]">
             MOVIN STUDIO
           </h2>
         </ScrollReveal>
@@ -58,7 +86,7 @@ function MovinStudioSection() {
 
         {/* Description */}
         <ScrollReveal delay={0.15}>
-          <p className="mx-auto mt-12 max-w-[720px] text-center font-body text-[16px] leading-[1.7] tracking-[0.01em] text-[#666] md:mt-16 md:text-[18px]">
+          <p className="mx-auto mt-12 max-w-[720px] text-center font-body text-base leading-[1.7] tracking-[0.01em] text-[#666] md:mt-16 md:text-lg">
             MOVIN Studio is the dedicated control and visualization application
             built for MOVIN TRACIN.{" "}
             <span className="font-semibold text-[#1a1a1a]">
@@ -82,7 +110,7 @@ function MovinStudioSection() {
               href={DOWNLOAD_LINKS.movinStudio}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-full bg-[#1a1a1a] px-7 py-3.5 font-ui text-[14px] font-normal text-white transition-opacity hover:opacity-80"
+              className="inline-flex items-center gap-2.5 rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white transition-opacity hover:opacity-80"
             >
               <Image
                 src={IMAGES.downloadFavicon}
@@ -96,66 +124,29 @@ function MovinStudioSection() {
           </div>
         </ScrollReveal>
 
-        {/* Plugin Download Links */}
+        {/* Plugin Download Cards */}
         <ScrollReveal delay={0.3}>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 md:mt-12">
-            {/* Unity Plugin */}
-            <Link
-              href={DOWNLOAD_LINKS.unityPlugin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 font-body text-[14px] text-[#1a1a1a] transition-opacity hover:opacity-60"
-            >
-              <Image
-                src={IMAGES.pluginUnity}
-                alt="Unity"
-                width={24}
-                height={24}
-                className="h-6 w-6"
-              />
-              Download Unity Plugin →
-            </Link>
-
-            {/* Unreal Engine Plugin */}
-            <Link
-              href={DOWNLOAD_LINKS.unrealPlugin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 font-body text-[14px] text-[#1a1a1a] transition-opacity hover:opacity-60"
-            >
-              <Image
-                src={IMAGES.pluginUnreal}
-                alt="Unreal Engine"
-                width={24}
-                height={24}
-                className="h-6 w-6"
-              />
-              Download Unreal Engine Plugin →
-            </Link>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.35}>
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-            {/* Blender Plugin */}
-            <Link
-              href={DOWNLOAD_LINKS.blenderPlugin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-body text-[14px] text-[#1a1a1a] transition-opacity hover:opacity-60"
-            >
-              Download Blender Plugin →
-            </Link>
-
-            {/* TouchDesigner Sample Project */}
-            <Link
-              href={DOWNLOAD_LINKS.touchDesigner}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-body text-[14px] text-[#1a1a1a] transition-opacity hover:opacity-60"
-            >
-              Download TouchDesigner Sample Project →
-            </Link>
+          <div className="mx-auto mt-10 grid max-w-[600px] grid-cols-1 gap-3 sm:grid-cols-2 md:mt-12">
+            {PLUGINS.map((plugin) => (
+              <Link
+                key={plugin.name}
+                href={plugin.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 rounded-xl border border-[#e8e8e8] px-5 py-3 font-body text-[14px] text-[#1a1a1a] transition-all hover:border-[#1a1a1a] hover:shadow-sm"
+              >
+                {plugin.icon && (
+                  <Image
+                    src={plugin.icon}
+                    alt={plugin.iconAlt}
+                    width={24}
+                    height={24}
+                    className="h-6 w-6"
+                  />
+                )}
+                <span>Download {plugin.name} →</span>
+              </Link>
+            ))}
           </div>
         </ScrollReveal>
       </div>
@@ -166,7 +157,7 @@ function MovinStudioSection() {
 /* ─── Sample Motion Data Section ─── */
 function SampleDataSection() {
   return (
-    <section className="px-6 pb-0 pt-32 md:pt-40">
+    <section className="bg-[#fafafa] px-6 pb-0 pt-32 md:pt-40">
       <div className="mx-auto max-w-[1200px]">
         {/* Section Title */}
         <ScrollReveal>
@@ -176,7 +167,7 @@ function SampleDataSection() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
-          <p className="mx-auto mt-8 max-w-[720px] text-center font-body text-[16px] leading-[1.7] tracking-[0.01em] text-[#666] md:text-[18px]">
+          <p className="mx-auto mt-8 max-w-[720px] text-center font-body text-base leading-[1.7] tracking-[0.01em] text-[#666] md:text-lg">
             MOVIN TRACIN delivers{" "}
             <span className="font-semibold text-[#1a1a1a]">
               a level of performance that&apos;s hard to find elsewhere.
@@ -196,6 +187,7 @@ function SampleDataSection() {
                 src="https://bvh-viewer-main.vercel.app/"
                 title="BVH Motion Viewer"
                 allow="fullscreen; xr-spatial-tracking; accelerometer; gyroscope; magnetometer"
+                loading="lazy"
                 className="h-full w-full border-0"
               />
             </div>
@@ -221,12 +213,13 @@ function SampleDataSection() {
           {/* YouTube Embed - Locomotion */}
           <ScrollReveal delay={0.15}>
             <div className="mx-auto mt-10 max-w-[800px]">
-              <div className="relative w-full overflow-hidden rounded-[16px]" style={{ paddingTop: "56.25%" }}>
+              <div className="relative w-full overflow-hidden rounded-[16px] shadow-lg" style={{ paddingTop: "56.25%" }}>
                 <iframe
                   src="https://www.youtube.com/embed/wlgI0-EoexQ?rel=0&controls=0&autoplay=1&mute=1&start=0"
                   title="Locomotion & Dynamic Actions"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
+                  loading="lazy"
                   className="absolute inset-0 h-full w-full"
                 />
               </div>
@@ -240,7 +233,7 @@ function SampleDataSection() {
                 href={DOWNLOAD_LINKS.sampleLocomotion}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block rounded-full bg-[#1a1a1a] px-6 py-3 font-ui text-[13px] font-normal text-white transition-opacity hover:opacity-80"
+                className="inline-block rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white transition-opacity hover:opacity-80"
               >
                 Download Sample Data
               </Link>
@@ -267,12 +260,13 @@ function SampleDataSection() {
           {/* YouTube Embed - K-pop */}
           <ScrollReveal delay={0.15}>
             <div className="mx-auto mt-10 max-w-[800px]">
-              <div className="relative w-full overflow-hidden rounded-[16px]" style={{ paddingTop: "56.25%" }}>
+              <div className="relative w-full overflow-hidden rounded-[16px] shadow-lg" style={{ paddingTop: "56.25%" }}>
                 <iframe
                   src="https://www.youtube.com/embed/0nGDJ55SPNM?rel=0&controls=0&autoplay=1&mute=1&start=0"
                   title="K-pop Dances"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
+                  loading="lazy"
                   className="absolute inset-0 h-full w-full"
                 />
               </div>
@@ -281,12 +275,12 @@ function SampleDataSection() {
 
           {/* Download Sample Data Button */}
           <ScrollReveal delay={0.2}>
-            <div className="mt-8 flex justify-center">
+            <div className="mt-8 flex justify-center pb-20">
               <Link
                 href={DOWNLOAD_LINKS.sampleKpop}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block rounded-full bg-[#1a1a1a] px-6 py-3 font-ui text-[13px] font-normal text-white transition-opacity hover:opacity-80"
+                className="inline-block rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white transition-opacity hover:opacity-80"
               >
                 Download Sample Data
               </Link>
@@ -301,56 +295,58 @@ function SampleDataSection() {
 /* ─── CTA Section ─── */
 function CTASection() {
   return (
-    <section className="px-6 pb-0 pt-32 md:pt-40">
-      <div className="mx-auto max-w-[1080px]">
-        <div className="grid grid-cols-12 gap-x-6">
-          {/* Row 1: Ready to Get MOVIN? */}
-          <div className="col-span-12 text-center">
-            <p className="text-center font-body text-[32px] font-normal leading-[120%] tracking-[0.01em] text-[#1a1a1a]">
-              Ready to Get MOVIN?
-            </p>
-          </div>
-          <div className="col-span-12 h-12" />
-          <div className="col-span-12 text-center">
+    <section className="px-6 py-20 md:py-28">
+      <div className="mx-auto flex max-w-[1080px] flex-col items-center">
+        {/* Ready to Get MOVIN? */}
+        <ScrollReveal>
+          <p className="text-center font-ui text-[24px] font-normal tracking-[-0.8px] text-[#1a1a1a] md:text-[40px]">
+            Ready to Get MOVIN?
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.1}>
+          <div className="mt-8">
             <Link
               href={`${SHOP_URL}/collections/all`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block rounded-full bg-[#1a1a1a] px-6 py-3.5 font-ui text-[16px] font-light text-white transition-opacity hover:opacity-80"
+              className="inline-block rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white transition-opacity hover:opacity-80"
             >
               Order Now
             </Link>
           </div>
+        </ScrollReveal>
 
-          {/* Spacing */}
-          <div className="col-span-12 h-80" />
+        {/* Divider */}
+        <div className="my-16 h-px w-16 bg-[#e0e0e0] md:my-20" />
 
-          {/* Row 2: Free Demo */}
-          <div className="col-span-12 md:col-start-4 md:col-end-10">
-            <p className="text-center font-body text-[32px] font-normal leading-[120%] tracking-[0.01em] text-[#1a1a1a]">
-              Ask for a Free Demo Session, or Consult With an Expert for Your
-              Use Case.
-            </p>
-          </div>
-          <div className="col-span-12 h-12" />
-          <div className="col-span-12 text-center">
+        {/* Free Demo */}
+        <ScrollReveal>
+          <p className="mx-auto max-w-[520px] text-center font-ui text-[24px] font-normal tracking-[-0.8px] text-[#1a1a1a] md:text-[40px]">
+            Ask for a Free Demo Session, or Consult With an Expert for Your
+            Use Case.
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.1}>
+          <div className="mt-8">
             <Link
               href="/online-demo"
-              className="inline-block rounded-full bg-[#1a1a1a] px-6 py-3.5 font-ui text-[16px] font-light text-white transition-opacity hover:opacity-80"
+              className="inline-block rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white transition-opacity hover:opacity-80"
             >
               Get a Free Demo
             </Link>
           </div>
-          <div className="col-span-12 h-9" />
-          <div className="col-span-12 text-center">
-            <Link
-              href="mailto:contact@movin3d.com"
-              className="font-body text-[20px] font-normal leading-[140%] tracking-[0.02em] text-[#c04bf7] transition-opacity hover:opacity-70"
-            >
-              Contact a MOVIN Expert →
-            </Link>
-          </div>
-        </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.15}>
+          <Link
+            href="mailto:contact@movin3d.com"
+            className="mt-6 font-body text-lg font-normal leading-[140%] tracking-[0.02em] text-[#c04bf7] transition-opacity hover:opacity-70"
+          >
+            Contact a MOVIN Expert →
+          </Link>
+        </ScrollReveal>
       </div>
     </section>
   );
@@ -359,9 +355,9 @@ function CTASection() {
 /* ─── Disclaimer Section ─── */
 function DisclaimerSection() {
   return (
-    <section className="px-6 pb-12 pt-24 md:pt-32">
+    <section className="bg-[#fafafa] px-6 pb-12 pt-24 md:pt-32">
       <div className="mx-auto max-w-[720px]">
-        <p className="font-body text-[12px] uppercase leading-[1.6] text-[rgb(145,145,145)]">
+        <p className="font-body text-[11px] leading-[1.8] text-[rgb(145,145,145)]">
           Products are shipped using reliable third-party logistics providers.
           While we strive to provide accurate shipping timelines, all delivery
           dates are estimates and may be subject to delay due to unforeseen

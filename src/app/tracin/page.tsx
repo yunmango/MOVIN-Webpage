@@ -97,13 +97,13 @@ function HighlightsSection() {
     <section className="flex flex-col items-center px-6 py-20 md:py-28">
       <div className="w-full max-w-[1080px]">
         <ScrollReveal>
-          <h2 className="text-center font-ui text-[32px] font-normal text-[#1a1a1a]">
+          <h2 className="text-center font-ui text-[24px] font-normal tracking-[-0.8px] text-[#1a1a1a] md:text-[40px]">
             Highlights
           </h2>
         </ScrollReveal>
 
         <ScrollReveal delay={0.05}>
-          <p className="mx-auto mt-6 max-w-[720px] text-center font-body text-[18px] leading-[1.5] text-[#666] md:text-[20px]">
+          <p className="mx-auto mt-6 max-w-[720px] text-center font-body text-base leading-[1.5] text-[#666] md:text-xl">
             MOVIN TRACIN delivers high-precision, markerless full-body motion
             capture in real-time, powered by on-device AI.
           </p>
@@ -112,7 +112,7 @@ function HighlightsSection() {
         <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3">
           {HIGHLIGHTS.map((item, i) => (
             <ScrollReveal key={item.title} delay={0.05 * (i + 1)}>
-              <div className="overflow-hidden rounded-[12px] bg-[#f9f9f9]">
+              <div className="group overflow-hidden rounded-2xl bg-[#f9f9f9] transition-all duration-300 hover:bg-white hover:shadow-lg">
                 <div className="p-6 pb-0">
                   <h3 className="font-ui text-[20px] font-normal text-[#1a1a1a]">
                     {item.title}
@@ -121,13 +121,13 @@ function HighlightsSection() {
                     {item.description}
                   </p>
                 </div>
-                <div className="mt-4 px-6 pb-6">
+                <div className="mt-4 overflow-hidden px-6 pb-6">
                   <Image
                     src={item.image}
                     alt={item.title}
                     width={800}
                     height={800}
-                    className="w-full rounded-[8px]"
+                    className="w-full rounded-[8px] transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 340px"
                   />
                 </div>
@@ -143,23 +143,23 @@ function HighlightsSection() {
 /* ─── Professional Mocap Experience ─── */
 function ProfessionalMocapSection() {
   return (
-    <section className="flex flex-col items-center px-6 py-20 md:py-28">
+    <section className="flex flex-col items-center bg-[#fafafa] px-6 py-20 md:py-28">
       <div className="w-full max-w-[1080px]">
         <ScrollReveal>
-          <h2 className="text-center font-ui text-[32px] font-normal text-[#1a1a1a]">
+          <h2 className="text-center font-ui text-[24px] font-normal tracking-[-0.8px] text-[#1a1a1a] md:text-[40px]">
             Professional Mocap Experience
           </h2>
         </ScrollReveal>
 
         <ScrollReveal delay={0.05}>
-          <p className="mx-auto mt-6 max-w-[720px] text-center font-body text-[18px] leading-[1.5] text-[#666] md:text-[20px]">
+          <p className="mx-auto mt-6 max-w-[720px] text-center font-body text-base leading-[1.5] text-[#666] md:text-xl">
             Markerless yet professional. The data reveals the accuracy of our
             mocap system.
           </p>
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
-          <div className="mt-10 overflow-hidden rounded-[24px]">
+          <div className="mt-10 overflow-hidden rounded-[24px] shadow-lg">
             <div
               className="relative w-full"
               style={{ paddingTop: "56.25%" }}
@@ -169,6 +169,7 @@ function ProfessionalMocapSection() {
                 title="MOVIN TRACIN vs Vicon vs Xsens"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
+                loading="lazy"
                 className="absolute inset-0 h-full w-full"
               />
             </div>
@@ -185,19 +186,30 @@ function MotionAiTechSection() {
     <section className="flex flex-col items-center px-6 py-20 md:py-28">
       <div className="w-full max-w-[1080px]">
         <ScrollReveal>
-          <h2 className="text-center font-ui text-[32px] font-normal text-[#1a1a1a]">
+          <h2 className="text-center font-ui text-[24px] font-normal tracking-[-0.8px] text-[#1a1a1a] md:text-[40px]">
             Motion AI Technology
           </h2>
         </ScrollReveal>
 
         <ScrollReveal delay={0.05}>
-          <p className="mx-auto mt-6 max-w-[820px] text-center font-body text-[18px] leading-[1.5] text-[#666] md:text-[20px]">
-            MOVIN TRACIN&apos;s LiDAR-based sensing ensures consistent accuracy
-            in bright light, low light, or complete darkness. And with full
-            resistance to electromagnetic interference, it stays stable even near
-            LED walls, audio gear, or broadcast equipment.Day or night, in or
-            out, clear results throughout.
-          </p>
+          <div className="mx-auto mt-6 max-w-[720px] space-y-4 text-center">
+            <p className="font-body text-base leading-[1.6] text-[#666] md:text-xl">
+              MOVIN TRACIN&apos;s{" "}
+              <span className="font-semibold text-[#1a1a1a]">
+                LiDAR-based sensing
+              </span>{" "}
+              ensures consistent accuracy in bright light, low light, or
+              complete darkness. And with full resistance to{" "}
+              <span className="font-semibold text-[#1a1a1a]">
+                electromagnetic interference
+              </span>
+              , it stays stable even near LED walls, audio gear, or broadcast
+              equipment.
+            </p>
+            <p className="font-body text-base leading-[1.6] text-[#666] md:text-xl">
+              Day or night, in or out, clear results throughout.
+            </p>
+          </div>
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
@@ -220,16 +232,16 @@ function MotionAiTechSection() {
 /* ─── Studio Cross-Sell ─── */
 function StudioCrossSellSection() {
   return (
-    <section className="flex flex-col items-center px-6 py-20 md:py-28">
+    <section className="flex flex-col items-center bg-[#fafafa] px-6 py-20 md:py-28">
       <div className="w-full max-w-[1080px]">
         <ScrollReveal>
-          <h2 className="text-center font-ui text-[32px] font-normal text-[#1a1a1a]">
+          <h2 className="text-center font-ui text-[24px] font-normal tracking-[-0.8px] text-[#1a1a1a] md:text-[40px]">
             MOVIN Studio
           </h2>
         </ScrollReveal>
 
         <ScrollReveal delay={0.05}>
-          <p className="mx-auto mt-6 max-w-[720px] text-center font-body text-[18px] leading-[1.5] text-[#666] md:text-[20px]">
+          <p className="mx-auto mt-6 max-w-[720px] text-center font-body text-base leading-[1.5] text-[#666] md:text-xl">
             MOVIN TRACIN&apos;s LiDAR-based sensing ensures consistent accuracy
             in bright light, low light, or complete darkness.
           </p>
@@ -247,13 +259,13 @@ function StudioCrossSellSection() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.15}>
-          <div className="mt-10 overflow-hidden rounded-[24px]">
+          <div className="mt-10 overflow-hidden rounded-3xl bg-[#fafafa] p-4 md:p-6">
             <Image
               src={IMAGES.movinStudio}
               alt="MOVIN Studio with TRACIN"
               width={2560}
               height={1440}
-              className="w-full"
+              className="w-full rounded-2xl"
               sizes="(max-width: 768px) 100vw, 1080px"
             />
           </div>
@@ -277,7 +289,7 @@ function CTASection() {
                 alt="MOVIN TRACIN"
                 width={1200}
                 height={1200}
-                className="w-full"
+                className="w-full transition-transform duration-700 hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 540px"
               />
             </div>
@@ -286,10 +298,10 @@ function CTASection() {
           {/* Right: Text + Button */}
           <ScrollReveal className="w-full md:w-1/2" delay={0.1}>
             <div>
-              <h2 className="font-ui text-[28px] font-normal leading-[1.3] text-[#1a1a1a] md:text-[32px]">
+              <h2 className="font-ui text-[24px] font-normal leading-[1.3] tracking-[-0.8px] text-[#1a1a1a] md:text-[32px]">
                 Let&apos;s get started with MOVIN TRACIN
               </h2>
-              <p className="mt-6 font-body text-[16px] leading-[1.6] text-[#666] md:text-[18px]">
+              <p className="mt-6 font-body text-base leading-[1.6] text-[#666] md:text-lg">
                 MOVIN&apos;s on-device AI fuses LiDAR point clouds and vision to
                 turn raw capture into production-ready motion data. Built for
                 entertainments, robotics, sports, and more.

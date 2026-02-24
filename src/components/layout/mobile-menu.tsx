@@ -57,8 +57,6 @@ export const MobileMenu = memo(function MobileMenu({ scrolled }: MobileMenuProps
           </Link>
           <Link
             href={NAV_CTA.purchase.href}
-            target="_blank"
-            rel="noopener noreferrer"
             className="rounded-full bg-black px-5 py-2.5 text-center font-ui text-sm font-medium text-white hover:bg-gray-800"
           >
             {NAV_CTA.purchase.label}

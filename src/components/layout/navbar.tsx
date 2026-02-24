@@ -66,8 +66,6 @@ export function Navbar() {
           </Link>
           <Link
             href={NAV_CTA.purchase.href}
-            target="_blank"
-            rel="noopener noreferrer"
             className="flex h-10 items-center rounded-lg bg-[rgb(26,26,26)] px-[15px] font-ui text-sm font-light text-white transition-opacity duration-300 hover:opacity-80"
           >
             {NAV_CTA.purchase.label}

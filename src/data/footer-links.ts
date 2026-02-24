@@ -15,7 +15,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     links: [
       { label: "TRACIN", href: "/tracin" },
       { label: "Studio", href: "/studio" },
-      { label: "Shop", href: "https://shop.movin3d.com/", external: true },
+      { label: "Shop", href: "/purchase" },
       { label: "Online Demo", href: "/online-demo" },
     ],
   },

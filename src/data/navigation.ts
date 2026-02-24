@@ -17,7 +17,6 @@ export const NAV_CTA = {
   demo: { label: "Online Demo", href: "/online-demo" },
   purchase: {
     label: "Purchase",
-    href: "https://shop.movin3d.com/products/movin-tracin",
-    external: true,
+    href: "/purchase",
   },
 };

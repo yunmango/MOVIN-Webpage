@@ -20,7 +20,7 @@ export function SimulatorSection() {
         <div className="mt-10 overflow-hidden rounded-2xl">
           <iframe
             src="https://tracin-simulator-web.vercel.app/"
-            className="h-[400px] md:h-[600px] w-full border-0"
+            className="h-[640px] md:h-[900px] w-full border-0"
             title="TRACIN 3D Simulator"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
           />

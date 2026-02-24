@@ -183,7 +183,7 @@ function SampleDataSection() {
         {/* BVH Motion Viewer */}
         <ScrollReveal delay={0.15}>
           <div className="mx-auto mt-12 max-w-[1080px]">
-            <div className="relative w-full overflow-hidden rounded-[16px]" style={{ height: "600px" }}>
+            <div className="relative w-full overflow-hidden rounded-[16px]" style={{ height: "min(80vh, 900px)" }}>
               <iframe
                 src="https://bvh-viewer-main.vercel.app/"
                 title="BVH Motion Viewer"

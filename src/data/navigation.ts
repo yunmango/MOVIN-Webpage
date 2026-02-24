@@ -9,7 +9,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "TRACIN", href: "/tracin", hasDropdown: true },
   { label: "Studio", href: "/studio", hasDropdown: true },
   { label: "About", href: "/about" },
-  { label: "Discover", href: "https://discover.movin3d.com/", external: true },
+  { label: "Discover", href: "/discover" },
   { label: "Downloads", href: "/downloads" },
 ];
 

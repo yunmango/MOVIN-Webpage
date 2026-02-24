@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 export function LicensePlansSection() {
   return (
-    <section className="flex flex-col items-center px-6 py-16 md:py-24">
+    <section className="flex flex-col items-center px-6 py-20 md:py-28">
       <div className="w-full max-w-[1080px]">
         <ScrollReveal>
           <h2 className="text-center font-ui text-[28px] font-normal text-[#1a1a1a] md:text-[32px]">
@@ -14,7 +14,7 @@ export function LicensePlansSection() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.05}>
-          <p className="mx-auto mt-6 max-w-[640px] text-center font-body text-[16px] leading-[1.5] text-[#666] md:text-[18px]">
+          <p className="mx-auto mt-8 max-w-[640px] text-center font-body text-[16px] leading-[1.5] text-[#666] md:text-[18px]">
             Every TRACIN includes a Starter license. Upgrade for the full suite of
             professional tools.
           </p>

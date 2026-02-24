@@ -13,14 +13,14 @@ export const metadata: Metadata = {
 /* ─── Hero Section ─── */
 function HeroSection() {
   return (
-    <section className="flex flex-col items-center justify-center pb-8 pt-40 md:pt-48">
+    <section className="flex flex-col items-center justify-center pb-12 pt-48 md:pt-56">
       <ScrollReveal>
         <h1 className="text-center font-heading text-[56px] font-bold leading-[0.95] tracking-[-0.02em] text-[#1a1a1a] md:text-[72px] lg:text-[88px]">
           Downloads
         </h1>
       </ScrollReveal>
       <ScrollReveal delay={0.1}>
-        <p className="mt-6 text-center font-body text-base leading-[1.6] text-[#666] md:text-xl">
+        <p className="mt-8 text-center font-body text-base leading-[1.6] text-[#666] md:text-xl">
           Find all the essential tools and resources you need to start.
         </p>
       </ScrollReveal>

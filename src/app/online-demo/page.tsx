@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 function HeroSection() {
   return (
     <section className="flex min-h-[60vh] items-center bg-black text-white md:min-h-[50vh]">
-      <div className="mx-auto max-w-[1080px] px-6 py-32 md:py-40">
+      <div className="mx-auto max-w-[1080px] px-6 py-36 md:py-48">
         <h1 className="max-w-[700px] font-ui text-[32px] font-normal leading-[1.3] md:text-[48px]">
           Effortless setup,
           <br />
@@ -19,7 +19,7 @@ function HeroSection() {
           <br />
           Discover how MOVIN simplifies motion capture for you.
         </h1>
-        <p className="mt-6 max-w-[600px] font-body text-[16px] leading-[1.6] text-gray-300 md:text-[18px]">
+        <p className="mt-8 max-w-[600px] font-body text-[16px] leading-[1.6] text-gray-300 md:text-[18px]">
           Check out our latest online demo video in advance to tailor the live
           session fully to your needs.
         </p>

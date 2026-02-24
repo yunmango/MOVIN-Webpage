@@ -22,9 +22,9 @@ const LOGOS = [
 
 export function TrustedBySection() {
   return (
-    <SectionWrapper className="bg-white py-16 md:py-20" fullWidth>
+    <SectionWrapper className="bg-white py-20 md:py-24" fullWidth>
       <div className="mx-auto max-w-[1200px] px-6 text-center">
-        <p className="mb-8 font-ui text-xl font-normal text-[rgb(102,102,102)]">
+        <p className="mb-10 md:mb-12 font-ui text-xl font-normal text-[rgb(102,102,102)]">
           Trusted by
         </p>
       </div>

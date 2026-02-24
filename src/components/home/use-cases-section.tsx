@@ -49,14 +49,14 @@ export function UseCasesSection() {
         <h2 className="text-center font-ui text-[24px] md:text-[40px] font-normal text-[rgb(26,26,26)] tracking-[-0.8px]">
           Built for real-world applications
         </h2>
-        <p className="mx-auto mt-4 max-w-3xl text-center font-body text-base md:text-xl text-[rgb(102,102,102)]">
+        <p className="mx-auto mt-6 md:mt-8 max-w-3xl text-center font-body text-base md:text-xl text-[rgb(102,102,102)]">
           MOVIN supports motion capture workflows across industries, from
           animation and streaming to large-scale venues and high-stakes
           deployment.
         </p>
       </ScrollReveal>
 
-      <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-12 md:mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {USE_CASES.map((useCase, i) => (
           <ScrollReveal key={useCase.title} delay={i * 0.1}>
             <div className="group relative h-[255px] overflow-hidden rounded-3xl">

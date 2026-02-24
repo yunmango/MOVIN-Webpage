@@ -62,7 +62,7 @@ export function EcosystemSection() {
           <h2 className="font-ui text-[24px] md:text-[40px] font-normal text-[rgb(26,26,26)] tracking-[-0.8px]">
             The MOVIN Ecosystem
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl font-body text-base md:text-xl text-[rgb(102,102,102)]">
+          <p className="mx-auto mt-6 md:mt-8 max-w-3xl font-body text-base md:text-xl text-[rgb(102,102,102)]">
             From flagship performance capture to multi-person tracking and an
             upcoming home motion console, MOVIN offers a complete motion capture
             system built for real-world deployment.
@@ -72,7 +72,7 @@ export function EcosystemSection() {
 
       <ScrollReveal delay={0.2}>
         {/* Tabs */}
-        <div className="mt-10 flex justify-center">
+        <div className="mt-12 flex justify-center">
           <div className="flex w-full max-w-full md:max-w-[600px] gap-1.5 rounded-3xl bg-white p-1.5 shadow-[0_0_0_1px_rgba(0,0,0,0.08)]">
             <button
               onClick={() => setActiveTab("hardware")}

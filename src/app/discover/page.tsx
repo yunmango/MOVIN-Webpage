@@ -66,9 +66,9 @@ const ARTICLES: Article[] = [
 
 export default function DiscoverPage() {
   return (
-    <section className="bg-white pb-20 pt-24">
+    <section className="bg-white pb-24 pt-32">
       {/* Hero / Header */}
-      <div className="mx-auto max-w-[1200px] px-6 pb-16 pt-12 text-center md:pb-24">
+      <div className="mx-auto max-w-[1200px] px-6 pb-20 pt-16 text-center md:pb-28 md:pt-20">
         <ScrollReveal>
           <h1 className="font-heading text-[56px] font-bold leading-[0.95] tracking-[-0.02em] text-[#1a1a1a] md:text-[72px]">
             Discover
@@ -96,7 +96,7 @@ export default function DiscoverPage() {
 
       {/* Articles Grid */}
       <div className="mx-auto max-w-[1200px] px-6">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {ARTICLES.map((article, i) => (
             <ScrollReveal key={article.href} delay={0.1 * (i + 1)}>
               <m.article

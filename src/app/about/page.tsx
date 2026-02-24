@@ -141,7 +141,7 @@ const TIMELINE_DATA: TimelineYear[] = [
 
 function HeroSection() {
   return (
-    <section className="bg-white pt-24 pb-8">
+    <section className="bg-white pt-48 pb-16 md:pt-[200px] md:pb-20">
       <div className="mx-auto max-w-[1400px] px-5 md:px-[116px] md:ml-5">
         <div className="max-w-[780px]">
           <ScrollReveal>
@@ -164,11 +164,11 @@ function HeroSection() {
 
 function HistorySection() {
   return (
-    <section className="bg-white px-5 py-12 md:py-20">
+    <section className="bg-white px-5 py-20 md:py-32">
       <div className="mx-auto max-w-[1100px]">
         {/* Section Title */}
         <ScrollReveal>
-          <div className="mb-12 text-center">
+          <div className="mb-16 md:mb-20 text-center">
             <span className="text-[14px] font-extrabold text-[#c04bf7]">
               MOVIN HISTORY
             </span>
@@ -176,12 +176,12 @@ function HistorySection() {
         </ScrollReveal>
 
         {/* Timeline */}
-        <div className="space-y-16">
+        <div className="space-y-20 md:space-y-28">
           {TIMELINE_DATA.map((yearData) => (
             <div key={yearData.year}>
               {/* Year Header */}
               <ScrollReveal>
-                <div className="mb-8">
+                <div className="mb-10 md:mb-12">
                   <h2 className="text-[22px] md:text-[28px] font-bold text-[#333]">
                     {yearData.year}
                   </h2>
@@ -202,7 +202,7 @@ function HistorySection() {
 
                       {/* Event Info */}
                       <div className="flex-1 min-w-0">
-                        <div className="pb-6 md:pb-10">
+                        <div className="pb-8 md:pb-12">
                           <h3
                             className={`text-[16px] md:text-[24px] font-bold ${
                               event.isHighlight

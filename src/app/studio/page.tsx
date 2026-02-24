@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 /* ─────────────────── Hero Section ─────────────────── */
 function HeroSection() {
   return (
-    <section className="bg-white pb-16 pt-32 md:pt-40">
+    <section className="bg-white pb-20 pt-40 md:pt-52">
       <div className="mx-auto max-w-[1080px] px-6">
         {/* Title */}
         <ScrollReveal>
@@ -25,14 +25,14 @@ function HeroSection() {
 
         {/* Subtitle */}
         <ScrollReveal delay={0.05}>
-          <p className="mx-auto mt-4 max-w-[500px] text-center font-body text-base text-[#666] md:text-xl">
+          <p className="mx-auto mt-6 md:mt-8 max-w-[500px] text-center font-body text-base text-[#666] md:text-xl">
             Control, visualize, and export motion with precision.
           </p>
         </ScrollReveal>
 
         {/* Hero Image */}
         <ScrollReveal delay={0.1}>
-          <div className="mt-8">
+          <div className="mt-10 md:mt-14">
             <Image
               src={IMAGES.studioWithTracin}
               alt="MOVIN Studio with TRACIN"
@@ -46,7 +46,7 @@ function HeroSection() {
 
         {/* Description */}
         <ScrollReveal delay={0.2}>
-          <p className="mx-auto mt-10 max-w-[600px] text-center font-body text-base leading-[1.7] text-[#666] md:text-xl">
+          <p className="mx-auto mt-14 md:mt-16 max-w-[600px] text-center font-body text-base leading-[1.7] text-[#666] md:text-xl">
             MOVIN Studio is the dedicated control and visualization application
             built for MOVIN TRACIN.{" "}
             <span className="font-semibold text-[#1a1a1a]">
@@ -84,7 +84,7 @@ function HeroSection() {
 /* ─────────────────── Retargeting Section ─────────────────── */
 function RetargetingSection() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-white py-24 md:py-32">
       <div className="mx-auto max-w-[1080px] px-6">
         <ScrollReveal>
           <Image
@@ -123,7 +123,7 @@ const PIPELINE_LOGOS = [
 
 function PipelineSection() {
   return (
-    <section className="bg-[#fafafa] py-20 md:py-28">
+    <section className="bg-[#fafafa] py-24 md:py-32">
       <div className="mx-auto max-w-[1080px] px-6">
         <ScrollReveal>
           <h2 className="font-ui text-[24px] font-normal tracking-[-0.8px] text-[#1a1a1a] md:text-[40px]">
@@ -180,7 +180,7 @@ function PipelineSection() {
 /* ─────────────────── Features Section (Area + Glove) ─────────────────── */
 function FeaturesSection() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-white py-24 md:py-32">
       <div className="mx-auto max-w-[1080px] px-6">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {/* Capture Area */}
@@ -232,7 +232,7 @@ function FeaturesSection() {
 /* ─────────────────── Technical Specification Section ─────────────────── */
 function TechnicalSpecSection() {
   return (
-    <section className="bg-[#fafafa] py-20 md:py-28">
+    <section className="bg-[#fafafa] py-24 md:py-32">
       <div className="mx-auto max-w-[1080px] px-6">
         <ScrollReveal>
           <h2 className="text-center font-heading text-[40px] font-bold tracking-[-0.02em] text-[#1a1a1a] md:text-[56px]">
@@ -369,7 +369,7 @@ function TechnicalSpecSection() {
 /* ─────────────────── CTA Section ─────────────────── */
 function CTASection() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-white py-24 md:py-32">
       <div className="mx-auto max-w-[1080px] px-6 text-center">
         <ScrollReveal>
           <h2 className="font-ui text-[24px] font-normal tracking-[-0.8px] text-[#1a1a1a] md:text-[40px]">

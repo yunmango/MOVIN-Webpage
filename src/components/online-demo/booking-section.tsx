@@ -8,10 +8,10 @@ const inputClasses =
 
 export function BookingSection() {
   return (
-    <section className="bg-[#1a1a1a] px-6 py-16 text-white md:py-28">
+    <section className="bg-[#1a1a1a] px-6 py-20 text-white md:py-32">
       <div className="mx-auto max-w-[1080px]">
         <ScrollReveal>
-          <div className="mb-14">
+          <div className="mb-16 md:mb-20">
             <h2 className="font-ui text-[32px] font-normal md:text-[40px]">
               Online Demo
             </h2>

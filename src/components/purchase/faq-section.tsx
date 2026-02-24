@@ -11,7 +11,7 @@ import {
 
 export function FAQSection() {
   return (
-    <section className="flex flex-col items-center px-6 py-16 md:py-24">
+    <section className="flex flex-col items-center px-6 py-20 md:py-28">
       <div className="w-full max-w-[760px]">
         <ScrollReveal>
           <h2 className="text-center font-ui text-[28px] font-normal text-[#1a1a1a] md:text-[32px]">

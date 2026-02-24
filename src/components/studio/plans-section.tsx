@@ -252,7 +252,7 @@ export function PlansSection() {
   );
 
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-white py-24 md:py-32">
       <div className="mx-auto max-w-[1080px] px-6">
         {/* Header */}
         <ScrollReveal>

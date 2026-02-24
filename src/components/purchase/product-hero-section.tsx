@@ -4,7 +4,7 @@ import { IMAGES } from "@/lib/constants";
 
 export function ProductHeroSection() {
   return (
-    <section className="relative flex flex-col items-center bg-[#0a0a0a] px-6 pt-28 pb-16 md:pt-36 md:pb-24">
+    <section className="relative flex flex-col items-center bg-[#0a0a0a] px-6 pt-36 pb-20 md:pt-48 md:pb-28">
       <div className="w-full max-w-[1080px]">
         <ScrollReveal>
           <div className="flex flex-col items-center">

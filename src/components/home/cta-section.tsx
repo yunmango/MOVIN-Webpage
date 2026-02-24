@@ -5,7 +5,7 @@ import { IMAGES } from "@/lib/constants";
 
 export function CTASection() {
   return (
-    <section className="px-6 py-20 md:py-28">
+    <section className="px-6 py-24 md:py-32">
       <div className="mx-auto w-full max-w-[1080px]">
         <div className="flex flex-col items-center gap-10 md:flex-row md:items-center md:gap-16">
           {/* Left: TRACIN image */}
@@ -28,12 +28,12 @@ export function CTASection() {
               <h2 className="font-ui text-[28px] font-normal leading-[1.3] text-[#1a1a1a] md:text-[32px]">
                 Let&apos;s get started with MOVIN TRACIN
               </h2>
-              <p className="mt-6 font-body text-[16px] leading-[1.6] text-[#666] md:text-[18px]">
+              <p className="mt-8 font-body text-[16px] leading-[1.6] text-[#666] md:text-[18px]">
                 MOVIN&apos;s on-device AI fuses LiDAR point clouds and vision to
                 turn raw capture into production-ready motion data. Built for
                 entertainments, robotics, sports, and more.
               </p>
-              <div className="mt-8">
+              <div className="mt-10">
                 <Link
                   href="/online-demo"
                   className="inline-block rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white transition-opacity hover:opacity-80"

@@ -6,7 +6,7 @@ import { IMAGES } from "@/lib/constants";
 
 export function StudioFeaturesSection() {
   return (
-    <section className="flex flex-col items-center bg-[#1a1a1a] px-6 py-16 md:py-24">
+    <section className="flex flex-col items-center bg-[#1a1a1a] px-6 py-20 md:py-28">
       <div className="w-full max-w-[1080px]">
         <ScrollReveal>
           <p className="text-center font-ui text-[13px] font-normal uppercase tracking-[0.15em] text-white/50">
@@ -18,7 +18,7 @@ export function StudioFeaturesSection() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.05}>
-          <p className="mx-auto mt-6 max-w-[640px] text-center font-body text-[16px] leading-[1.5] text-white/60 md:text-[18px]">
+          <p className="mx-auto mt-8 max-w-[640px] text-center font-body text-[16px] leading-[1.5] text-white/60 md:text-[18px]">
             Powerful software to preview, retarget, clean up, and export your
             motion capture data.
           </p>

@@ -31,7 +31,7 @@ export function AiTechSection() {
           <h2 className="font-ui text-[24px] md:text-[40px] font-normal text-[rgb(26,26,26)] tracking-[-0.8px]">
             On-device AI that turns motion into output
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl font-body text-base md:text-xl text-[rgb(102,102,102)]">
+          <p className="mx-auto mt-6 md:mt-8 max-w-3xl font-body text-base md:text-xl text-[rgb(102,102,102)]">
             MOVIN&apos;s on-device AI fuses LiDAR point clouds and vision to turn
             raw capture into production-ready motion data. Built for
             entertainments, robotics, sports, and more.
@@ -40,7 +40,7 @@ export function AiTechSection() {
       </ScrollReveal>
 
       <ScrollReveal delay={0.2}>
-        <div className="relative mt-10 overflow-hidden rounded-2xl">
+        <div className="relative mt-12 md:mt-14 overflow-hidden rounded-2xl">
           <ReactCompareSlider
             itemOne={
               <CompareVideo src={VIDEOS.aiBefore} webm={VIDEOS.aiBeforeWebm} />

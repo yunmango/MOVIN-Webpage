@@ -14,7 +14,7 @@ export function SectionWrapper({
   id,
 }: SectionWrapperProps) {
   return (
-    <section id={id} className={cn("py-14 md:py-20 lg:py-28", className)}>
+    <section id={id} className={cn("py-16 md:py-24 lg:py-32", className)}>
       {fullWidth ? (
         children
       ) : (

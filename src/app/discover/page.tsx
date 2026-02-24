@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { m } from "framer-motion";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 
 /* -------------------------------------------------------------------------- */
@@ -95,41 +96,46 @@ export default function DiscoverPage() {
 
       {/* Articles Grid */}
       <div className="mx-auto max-w-[1200px] px-6">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {ARTICLES.map((article, i) => (
-            <ScrollReveal key={article.href} delay={0.05 * (i + 1)}>
-              <article className="group cursor-pointer">
+            <ScrollReveal key={article.href} delay={0.1 * (i + 1)}>
+              <m.article
+                className="group cursor-pointer"
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+              >
                 {/* Category Tag */}
-                <div className="mb-3">
+                <div className="mb-4">
                   <span
-                    className={`inline-block rounded-full px-4 py-1.5 font-ui text-[13px] font-medium leading-[1] text-[#1a1a1a] ${CATEGORY_STYLES[article.category] ?? "bg-gray-200/50"}`}
+                    className={`inline-block rounded-full px-4 py-1.5 font-ui text-[13px] font-medium leading-[1] text-[#1a1a1a] transition-transform duration-200 group-hover:scale-105 ${CATEGORY_STYLES[article.category] ?? "bg-gray-200/50"}`}
                   >
                     {article.category}
                   </span>
                 </div>
 
-                {/* Image */}
-                <div className="relative mb-0 w-full overflow-hidden rounded-2xl">
+                {/* Image with overlay */}
+                <div className="relative mb-0 aspect-[16/10] w-full overflow-hidden rounded-2xl shadow-lg transition-shadow duration-300 group-hover:shadow-xl">
                   <Image
                     src={article.image}
                     alt={article.title}
                     width={400}
                     height={250}
-                    className="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 280px"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 340px"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </div>
 
                 {/* Title */}
-                <h4 className="mt-3 font-body text-[16px] font-semibold leading-[24px] text-[#1a1a1a] transition-colors group-hover:text-[#333] md:text-[17px]">
+                <h4 className="mt-3 font-body text-[16px] font-semibold leading-[24px] text-[#1a1a1a] transition-colors duration-200 group-hover:text-[#555] md:text-[17px]">
                   {article.title}
                 </h4>
 
                 {/* Date */}
-                <p className="mt-3 font-body text-[14px] font-normal text-[#999]">
+                <p className="mt-3 font-body text-[14px] font-normal text-[#999] transition-opacity duration-200 group-hover:opacity-70">
                   {article.date}
                 </p>
-              </article>
+              </m.article>
             </ScrollReveal>
           ))}
         </div>

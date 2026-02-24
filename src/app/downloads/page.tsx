@@ -16,12 +16,12 @@ function HeroSection() {
   return (
     <section className="flex flex-col items-center justify-center pb-12 pt-48 md:pt-56">
       <ScrollReveal>
-        <h1 className="text-center font-heading text-[56px] font-bold leading-[0.95] tracking-[-0.02em] text-[#1a1a1a] md:text-[72px] lg:text-[88px]">
+        <h1 className="text-center font-heading text-[48px] font-bold leading-[1] tracking-[-0.02em] text-[#1a1a1a] md:text-[64px] lg:text-[80px]">
           Downloads
         </h1>
       </ScrollReveal>
       <ScrollReveal delay={0.1}>
-        <p className="mt-8 text-center font-body text-base leading-[1.6] text-[#666] md:text-xl">
+        <p className="mt-8 text-center font-body text-base leading-[1.6] text-[#666] md:text-lg">
           Find all the essential tools and resources you need to start.
         </p>
       </ScrollReveal>
@@ -64,7 +64,7 @@ function MovinStudioSection() {
       <div className="mx-auto max-w-[1200px]">
         {/* Title */}
         <ScrollReveal>
-          <h2 className="text-center font-heading text-[48px] font-bold leading-[1] tracking-[-0.02em] text-[#1a1a1a] md:text-[64px] lg:text-[80px]">
+          <h2 className="text-center font-heading text-[40px] font-bold leading-[1] tracking-[-0.02em] text-[#1a1a1a] md:text-[52px] lg:text-[64px]">
             MOVIN STUDIO
           </h2>
         </ScrollReveal>
@@ -87,7 +87,7 @@ function MovinStudioSection() {
 
         {/* Description */}
         <ScrollReveal delay={0.15}>
-          <p className="mx-auto mt-12 max-w-[720px] text-center font-body text-base leading-[1.7] tracking-[0.01em] text-[#666] md:mt-16 md:text-lg">
+          <p className="mx-auto mt-12 max-w-[680px] text-center font-body text-base leading-[1.6] tracking-[0.01em] text-[#666] md:mt-16 md:text-lg">
             MOVIN Studio is the dedicated control and visualization application
             built for MOVIN TRACIN.{" "}
             <span className="font-semibold text-[#1a1a1a]">
@@ -99,7 +99,7 @@ function MovinStudioSection() {
 
         {/* Currently available for Windows */}
         <ScrollReveal delay={0.2}>
-          <p className="mt-10 text-center font-body text-[14px] tracking-[0.02em] text-[#999] md:mt-12">
+          <p className="mt-10 text-center font-body text-[13px] tracking-[0.01em] text-[#999] md:mt-12">
             Currently available for Windows
           </p>
         </ScrollReveal>
@@ -162,13 +162,13 @@ function SampleDataSection() {
       <div className="mx-auto max-w-[1200px]">
         {/* Section Title */}
         <ScrollReveal>
-          <h2 className="text-center font-heading text-[48px] font-bold leading-[1] tracking-[-0.02em] text-[#1a1a1a] md:text-[64px] lg:text-[80px]">
+          <h2 className="text-center font-heading text-[40px] font-bold leading-[1] tracking-[-0.02em] text-[#1a1a1a] md:text-[52px] lg:text-[64px]">
             Sample motion data
           </h2>
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
-          <p className="mx-auto mt-8 max-w-[720px] text-center font-body text-base leading-[1.7] tracking-[0.01em] text-[#666] md:text-lg">
+          <p className="mx-auto mt-8 max-w-[680px] text-center font-body text-base leading-[1.6] tracking-[0.01em] text-[#666] md:text-lg">
             MOVIN TRACIN delivers{" "}
             <span className="font-semibold text-[#1a1a1a]">
               a level of performance that&apos;s hard to find elsewhere.
@@ -198,13 +198,13 @@ function SampleDataSection() {
         {/* Locomotion & Dynamic Actions */}
         <div className="mt-24 md:mt-32">
           <ScrollReveal>
-            <h3 className="text-center font-heading text-[32px] font-bold leading-[1.1] tracking-[-0.01em] text-[#1a1a1a] md:text-[40px]">
+            <h3 className="text-center font-heading text-[28px] font-bold leading-[1.1] tracking-[-0.02em] text-[#1a1a1a] md:text-[36px]">
               Locomotion &amp; Dynamic Actions
             </h3>
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <p className="mx-auto mt-6 max-w-[640px] text-center font-body text-[15px] leading-[1.7] tracking-[0.01em] text-[#999]">
+            <p className="mx-auto mt-6 max-w-[680px] text-center font-body text-[15px] leading-[1.6] tracking-[0.01em] text-[#666]">
               Experience motion data captured with MOVIN TRACIN, spanning everyday
               locomotion and expressive actions like big jumps, duckwalk, and
               slickback.
@@ -245,13 +245,13 @@ function SampleDataSection() {
         {/* K-pop Dances */}
         <div className="mt-24 md:mt-32">
           <ScrollReveal>
-            <h3 className="text-center font-heading text-[32px] font-bold leading-[1.1] tracking-[-0.01em] text-[#1a1a1a] md:text-[40px]">
+            <h3 className="text-center font-heading text-[28px] font-bold leading-[1.1] tracking-[-0.02em] text-[#1a1a1a] md:text-[36px]">
               K-pop Dances
             </h3>
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <p className="mx-auto mt-6 max-w-[640px] text-center font-body text-[15px] leading-[1.7] tracking-[0.01em] text-[#999]">
+            <p className="mx-auto mt-6 max-w-[680px] text-center font-body text-[15px] leading-[1.6] tracking-[0.01em] text-[#666]">
               K-pop dance data captured with MOVIN TRACIN showcases smooth
               movements and fluid transitions, embodying the energy of
               contemporary performance.
@@ -300,7 +300,7 @@ function CTASection() {
       <div className="mx-auto flex max-w-[1080px] flex-col items-center">
         {/* Ready to Get MOVIN? */}
         <ScrollReveal>
-          <p className="text-center font-ui text-[24px] font-normal tracking-[-0.8px] text-[#1a1a1a] md:text-[40px]">
+          <p className="text-center font-heading text-[28px] font-bold leading-[1.1] tracking-[-0.02em] text-[#1a1a1a] md:text-[36px]">
             Ready to Get MOVIN?
           </p>
         </ScrollReveal>
@@ -321,7 +321,7 @@ function CTASection() {
 
         {/* Free Demo */}
         <ScrollReveal>
-          <p className="mx-auto max-w-[520px] text-center font-ui text-[24px] font-normal tracking-[-0.8px] text-[#1a1a1a] md:text-[40px]">
+          <p className="mx-auto max-w-[680px] text-center font-heading text-[28px] font-bold leading-[1.1] tracking-[-0.02em] text-[#1a1a1a] md:text-[36px]">
             Ask for a Free Demo Session, or Consult With an Expert for Your
             Use Case.
           </p>
@@ -341,7 +341,7 @@ function CTASection() {
         <ScrollReveal delay={0.15}>
           <Link
             href="mailto:contact@movin3d.com"
-            className="mt-6 font-body text-lg font-normal leading-[140%] tracking-[0.02em] text-[#c04bf7] transition-opacity hover:opacity-70"
+            className="mt-6 font-body text-base font-normal leading-[1.6] tracking-[0.01em] text-[#c04bf7] transition-opacity hover:opacity-70"
           >
             Contact a MOVIN Expert →
           </Link>
@@ -356,7 +356,7 @@ function DisclaimerSection() {
   return (
     <section className="bg-[#fafafa] px-6 pb-12 pt-24 md:pt-32">
       <div className="mx-auto max-w-[720px]">
-        <p className="font-body text-[11px] leading-[1.8] text-[rgb(145,145,145)]">
+        <p className="font-body text-[11px] leading-[1.8] text-[#999]">
           Products are shipped using reliable third-party logistics providers.
           While we strive to provide accurate shipping timelines, all delivery
           dates are estimates and may be subject to delay due to unforeseen

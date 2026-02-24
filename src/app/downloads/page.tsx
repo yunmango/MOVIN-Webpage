@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
-import { IMAGES, DOWNLOAD_LINKS, SHOP_URL } from "@/lib/constants";
+import { IMAGES, DOWNLOAD_LINKS } from "@/lib/constants";
 import { cn, BTN_PRIMARY } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -308,9 +308,7 @@ function CTASection() {
         <ScrollReveal delay={0.1}>
           <div className="mt-8">
             <Link
-              href={`${SHOP_URL}/collections/all`}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/purchase"
               className={cn("rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white", BTN_PRIMARY)}
             >
               Order Now

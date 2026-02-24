@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { TiltCard } from "@/components/shared/tilt-card";
-import { IMAGES, SHOP_URL } from "@/lib/constants";
+import { IMAGES } from "@/lib/constants";
 import { cn, BTN_PRIMARY } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -60,9 +60,7 @@ function HeroSection() {
                 $ 11,000
               </span>
               <Link
-                href={`${SHOP_URL}/collections/all`}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/purchase"
                 className={cn("rounded-r-full bg-[#1a1a1a] px-6 py-2.5 font-ui text-[16px] font-light text-white", BTN_PRIMARY)}
               >
                 Shop Now

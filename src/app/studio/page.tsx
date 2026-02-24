@@ -394,8 +394,7 @@ function CTASection() {
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
           <Link
-            href="https://shop.movin3d.com/collections/all"
-            target="_blank"
+            href="/purchase"
             className={cn("mt-8 rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white", BTN_PRIMARY)}
           >
             Order Now

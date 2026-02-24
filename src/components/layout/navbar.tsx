@@ -8,7 +8,7 @@ import { NAV_ITEMS, NAV_CTA } from "@/data/navigation";
 import { MobileMenu } from "./mobile-menu";
 import { cn } from "@/lib/utils";
 
-const DARK_HERO_ROUTES = ["/", "/online-demo"];
+const DARK_HERO_ROUTES = ["/"];
 
 export function Navbar() {
   const scrolled = useScrollPosition(50);

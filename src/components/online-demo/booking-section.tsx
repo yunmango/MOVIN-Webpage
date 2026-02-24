@@ -4,18 +4,18 @@ import { ChevronDown } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 
 const inputClasses =
-  "w-full rounded-lg border border-[#333] bg-[#252525] px-4 py-3 font-body text-[15px] text-white outline-none transition-all duration-200 placeholder:text-[#666] focus:border-[#c8ff00] focus:ring-1 focus:ring-[#c8ff00]/30";
+  "w-full rounded-[8px] border border-[#e8e8e8] bg-white px-4 py-3 font-body text-[15px] text-[#1a1a1a] outline-none transition-all duration-200 placeholder:text-[#999] focus:border-[#1a1a1a] focus:ring-1 focus:ring-[#1a1a1a]/10";
 
 export function BookingSection() {
   return (
-    <section className="bg-[#1a1a1a] px-6 py-20 text-white md:py-32">
+    <section className="bg-[#fafafa] px-6 py-20 md:py-32">
       <div className="mx-auto max-w-[1080px]">
         <ScrollReveal>
           <div className="mb-16 md:mb-20">
-            <h2 className="font-ui text-[32px] font-normal md:text-[40px]">
+            <h2 className="font-ui text-[32px] font-normal text-[#1a1a1a] md:text-[40px]">
               Online Demo
             </h2>
-            <p className="mt-3 font-body text-[16px] leading-[1.6] text-[#999] md:text-[18px]">
+            <p className="mt-3 font-body text-[16px] leading-[1.6] text-[#666] md:text-[18px]">
               Ready to see MOVIN Tracin and Studio in action?
               <br />
               Fill out the form below to schedule your online demo.
@@ -32,7 +32,7 @@ export function BookingSection() {
           {/* Your Name */}
           <ScrollReveal delay={0.05 * 0}>
             <div>
-              <label htmlFor="name" className="mb-3 block font-ui text-[16px] font-normal text-white md:text-[18px]">
+              <label htmlFor="name" className="mb-3 block font-ui text-[16px] font-normal text-[#1a1a1a] md:text-[18px]">
                 Your Name
               </label>
               <input
@@ -48,7 +48,7 @@ export function BookingSection() {
           {/* Position */}
           <ScrollReveal delay={0.05 * 1}>
             <div>
-              <label htmlFor="position" className="mb-3 block font-ui text-[16px] font-normal text-white md:text-[18px]">
+              <label htmlFor="position" className="mb-3 block font-ui text-[16px] font-normal text-[#1a1a1a] md:text-[18px]">
                 Your position in your company / institution
               </label>
               <input
@@ -64,7 +64,7 @@ export function BookingSection() {
           {/* Company */}
           <ScrollReveal delay={0.05 * 2}>
             <div>
-              <label htmlFor="company" className="mb-3 block font-ui text-[16px] font-normal text-white md:text-[18px]">
+              <label htmlFor="company" className="mb-3 block font-ui text-[16px] font-normal text-[#1a1a1a] md:text-[18px]">
                 Name of your company / institution
               </label>
               <input
@@ -80,10 +80,10 @@ export function BookingSection() {
           {/* Email */}
           <ScrollReveal delay={0.05 * 3}>
             <div>
-              <label htmlFor="email" className="mb-1 block font-ui text-[16px] font-normal text-white md:text-[18px]">
+              <label htmlFor="email" className="mb-1 block font-ui text-[16px] font-normal text-[#1a1a1a] md:text-[18px]">
                 Email address
               </label>
-              <p className="mb-3 font-body text-[13px] leading-[1.5] text-[#888]">
+              <p className="mb-3 font-body text-[13px] leading-[1.5] text-[#999]">
                 * Please double check, we will contact directly to your email.
               </p>
               <input
@@ -99,7 +99,7 @@ export function BookingSection() {
           {/* Country */}
           <ScrollReveal delay={0.05 * 4}>
             <div>
-              <label htmlFor="country" className="mb-3 block font-ui text-[16px] font-normal text-white md:text-[18px]">
+              <label htmlFor="country" className="mb-3 block font-ui text-[16px] font-normal text-[#1a1a1a] md:text-[18px]">
                 Country (Region)
               </label>
               <input
@@ -115,7 +115,7 @@ export function BookingSection() {
           {/* Budget */}
           <ScrollReveal delay={0.05 * 5}>
             <div>
-              <label htmlFor="budget" className="mb-3 block font-ui text-[16px] font-normal text-white md:text-[18px]">
+              <label htmlFor="budget" className="mb-3 block font-ui text-[16px] font-normal text-[#1a1a1a] md:text-[18px]">
                 Budget Expectations
               </label>
               <div className="relative">
@@ -142,10 +142,10 @@ export function BookingSection() {
           {/* Discovery Channel */}
           <ScrollReveal delay={0.05 * 6}>
             <div>
-              <label htmlFor="discovery" className="mb-1 block font-ui text-[16px] font-normal text-white md:text-[18px]">
+              <label htmlFor="discovery" className="mb-1 block font-ui text-[16px] font-normal text-[#1a1a1a] md:text-[18px]">
                 Discovery Channel
               </label>
-              <p className="mb-3 font-body text-[13px] leading-[1.5] text-[#888]">
+              <p className="mb-3 font-body text-[13px] leading-[1.5] text-[#999]">
                 * Please let us know how you heard about us.
               </p>
               <input
@@ -162,10 +162,10 @@ export function BookingSection() {
           {/* Intended use */}
           <ScrollReveal delay={0.05 * 7}>
             <div>
-              <label htmlFor="use-details" className="mb-1 block font-ui text-[16px] font-normal text-white md:text-[18px]">
+              <label htmlFor="use-details" className="mb-1 block font-ui text-[16px] font-normal text-[#1a1a1a] md:text-[18px]">
                 Intended use and details
               </label>
-              <p className="mb-3 font-body text-[13px] leading-[1.5] text-[#888]">
+              <p className="mb-3 font-body text-[13px] leading-[1.5] text-[#999]">
                 * Please describe your intended use of the product in detail.
                 Include specifics such as the scope of motion capture required, the
                 number of people involved, and any other relevant details.
@@ -183,14 +183,14 @@ export function BookingSection() {
           {/* Submit row */}
           <ScrollReveal delay={0.05 * 8}>
             <div className="flex flex-col items-start justify-between gap-6 pt-4 md:flex-row md:items-center">
-              <p className="font-body text-[14px] leading-[1.6] text-gray-400">
+              <p className="font-body text-[14px] leading-[1.6] text-[#999]">
                 Thank you for requesting an online demo.
                 <br />
                 We will email you shortly to schedule the demo.
               </p>
               <button
                 type="submit"
-                className="w-full shrink-0 rounded-full bg-[#c8ff00] px-10 py-3 font-ui text-[14px] font-medium text-black transition-all active:scale-[0.98] hover:shadow-[0_0_20px_rgba(200,255,0,0.3)] hover:brightness-110 md:w-auto"
+                className="w-full shrink-0 rounded-[8px] bg-[#1a1a1a] px-10 py-3 font-ui text-[14px] font-medium text-white transition-all active:scale-[0.98] hover:opacity-80 md:w-auto"
               >
                 Submit
               </button>

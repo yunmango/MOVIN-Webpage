@@ -40,20 +40,20 @@ const PLUGINS = [
   {
     name: "Unreal Engine Plugin",
     href: DOWNLOAD_LINKS.unrealPlugin,
-    icon: IMAGES.pluginUnreal,
+    icon: "/icons/unreal-engine.svg",
     iconAlt: "Unreal Engine",
   },
   {
     name: "Blender Plugin",
     href: DOWNLOAD_LINKS.blenderPlugin,
-    icon: null,
-    iconAlt: "",
+    icon: "/icons/blender.svg",
+    iconAlt: "Blender",
   },
   {
     name: "TouchDesigner Sample",
     href: DOWNLOAD_LINKS.touchDesigner,
-    icon: null,
-    iconAlt: "",
+    icon: "/icons/touchdesigner.svg",
+    iconAlt: "TouchDesigner",
   },
 ];
 
@@ -136,15 +136,13 @@ function MovinStudioSection() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 rounded-xl border border-[#e8e8e8] px-5 py-3 font-body text-[14px] text-[#1a1a1a] transition-all hover:border-[#1a1a1a] hover:shadow-sm"
               >
-                {plugin.icon && (
-                  <Image
-                    src={plugin.icon}
-                    alt={plugin.iconAlt}
-                    width={24}
-                    height={24}
-                    className="h-6 w-6"
-                  />
-                )}
+                <Image
+                  src={plugin.icon}
+                  alt={plugin.iconAlt}
+                  width={24}
+                  height={24}
+                  className="h-6 w-6"
+                />
                 <span>Download {plugin.name} →</span>
               </Link>
             ))}

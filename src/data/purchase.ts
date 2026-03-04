@@ -57,7 +57,7 @@ export const PACKAGE_ACCESSORIES = [
 
 export const STATS = [
   { value: "~2-3cm", label: "Joint Accuracy" },
-  { value: "<100ms", label: "Latency" },
+  { value: "< 0.1sec", label: "Latency" },
   { value: "60fps", label: "Frame Rate" },
 ];
 
@@ -126,8 +126,8 @@ export const STUDIO_FEATURES = [
 export const LICENSE_PLANS = [
   {
     name: "Starter",
-    price: "Included",
-    period: "30-day trial",
+    price: "Free",
+    period: "Free",
     description: "Get started with core capture features",
     features: [
       "Real-time motion capture",
@@ -138,9 +138,9 @@ export const LICENSE_PLANS = [
     highlighted: false,
   },
   {
-    name: "Professional",
+    name: "Unlimited",
     price: "$300",
-    period: "/ month",
+    period: "Monthly / Yearly",
     description: "Full suite for production teams",
     features: [
       "Everything in Starter",
@@ -210,7 +210,7 @@ export const SETUP_STEPS = [
 ];
 
 export const SETUP_REQUIREMENTS = [
-  { label: "Capture Area", value: "3m × 3m minimum (5m × 5m recommended)" },
+  { label: "Capture Area", value: "1m × 1m minimum (5m × 5m recommended)" },
   { label: "Ceiling Height", value: "2.5m minimum" },
   { label: "PC Requirements", value: "Windows 10/11, Intel i7+, 16GB RAM, Ethernet port" },
   { label: "Distance", value: "2-5m from sensor to performer" },
@@ -220,8 +220,8 @@ export const SPECIFICATIONS = [
   {
     category: "Physical",
     specs: [
-      { label: "Dimensions", value: "280 × 80 × 80 mm" },
-      { label: "Weight", value: "1.2 kg" },
+      { label: "Dimensions", value: "87 × 225 × 165 mm (W × D × H)" },
+      { label: "Weight", value: "< 3 kg" },
       { label: "Housing", value: "Anodized aluminum" },
       { label: "Mount", value: '1/4" standard thread' },
     ],
@@ -238,15 +238,15 @@ export const SPECIFICATIONS = [
     category: "Performance",
     specs: [
       { label: "Frame Rate", value: "60 fps" },
-      { label: "Latency", value: "< 100 ms" },
+      { label: "Latency", value: "< 0.1 sec" },
       { label: "Joint Accuracy", value: "~2-3 cm (vs marker-based)" },
-      { label: "Tracking Points", value: "24 body joints + hands" },
+      { label: "Tracking Points", value: "22 body joints + 30 hand joints" },
     ],
   },
   {
     category: "Capture Space",
     specs: [
-      { label: "Min Area", value: "3m × 3m" },
+      { label: "Min Area", value: "1m × 1m" },
       { label: "Recommended Area", value: "5m × 5m" },
       { label: "Range", value: "2-5 m from sensor" },
       { label: "Subjects", value: "1 person per device" },
@@ -297,7 +297,7 @@ export const FAQ_ITEMS = [
   {
     question: "What is the capture area requirement?",
     answer:
-      "Minimum 3m × 3m, with 5m × 5m recommended. The performer should be 2-5 meters from the sensor. Ceiling height should be at least 2.5m.",
+      "Minimum 1m × 1m, with 5m × 5m recommended. The performer should be 2-5 meters from the sensor. Ceiling height should be at least 2.5m.",
   },
   {
     question: "Does it support real-time streaming?",

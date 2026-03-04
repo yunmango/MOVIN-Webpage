@@ -232,6 +232,7 @@ function SampleDataSection() {
                 href={DOWNLOAD_LINKS.sampleLocomotion}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Download Locomotion & Dynamic Actions Sample Data"
                 className={cn("rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white", BTN_PRIMARY)}
               >
                 Download Sample Data
@@ -279,6 +280,7 @@ function SampleDataSection() {
                 href={DOWNLOAD_LINKS.sampleKpop}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Download K-pop Dances Sample Data"
                 className={cn("rounded-[8px] bg-[#1a1a1a] px-10 py-2.5 font-ui text-[16px] font-light text-white", BTN_PRIMARY)}
               >
                 Download Sample Data
